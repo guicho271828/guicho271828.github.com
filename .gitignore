@@ -2,3 +2,6 @@
 #*
 deploy/
 *.fasl
+*.scssc
+*.map
+**/.sass-cache/

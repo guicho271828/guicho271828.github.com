@@ -1,101 +1,279 @@
-#content { background: #fff; padding-top: 1em }
-#header { float: right; margin-left: 1em; margin-bottom: 1em }
-#coleslaw-logo { float: right; }
-span.sitenav:not(:last-child):after { content: '|' }
-a { text-decoration: none; color: #992900 }
-a.anchor { color: black }
-.date { font-style: italic }
-.title { margin-left: 1em }
-.article-meta { margin-left: 2.2em; margin-bottom: 2.2em }
-.archive-title { font-size: 1em } .article-title { font-size: 2em }
-.article-content { margin-left: 2.2em }
-.fineprint { text-align: center; font-size: .9em; margin-top: .5em }
-.tag-low { font-size: .8em; font-weight: 200 }
-.tag-medium { font-size: 1.2em; font-weight: 600 }
-.tag-high { font-size: 1.8em; font-weight: 800 }
-.navigation { font-size: 1.2em; border-bottom: 1px solid }
-body { background-color: white; font-family: Vollkorn; font-size: 14pt }
-pre { overflow: auto; margin-left: 1em; padding: 0.5em; border-left: 1px dashed;
-      background-color: white; padding: .75em .5em; font-family: (unquote mono-font) }
-tt { font-size: .9em; font-family: (unquote mono-font) }
+body {
+  background-color: #333;
+  font-family: Helvetica, Noto Sans; }
+
+@media screen and (min-width: 200px) and (max-width: 300px) {
+  body {
+    font-size: 3.4px; } }
+@media screen and (min-width: 300px) and (max-width: 400px) {
+  body {
+    font-size: 5.1px; } }
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  body {
+    font-size: 6.8px; } }
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  body {
+    font-size: 8.5px; } }
+@media screen and (min-width: 600px) and (max-width: 700px) {
+  body {
+    font-size: 10.2px; } }
+@media screen and (min-width: 700px) and (max-width: 800px) {
+  body {
+    font-size: 11.9px; } }
+@media screen and (min-width: 800px) and (max-width: 900px) {
+  body {
+    font-size: 13.6px; } }
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+  body {
+    font-size: 15.3px; } }
+@media screen and (min-width: 1000px) and (max-width: 1100px) {
+  body {
+    font-size: 17px; } }
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
+  body {
+    font-size: 18.7px; } }
+@media screen and (min-width: 1200px) and (max-width: 1300px) {
+  body {
+    font-size: 20.4px; } }
+#content {
+  background: BlanchedAlmond;
+  padding-top: 1em; }
+
+#header {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em; }
+
+#coleslaw-logo {
+  float: right; }
+
+span.sitenav:not(:last-child):after {
+  content: '|'; }
+
+a {
+  text-decoration: none;
+  color: #992900; }
+
+a.anchor {
+  color: black; }
+
+.date {
+  font-style: italic; }
+
+.title {
+  margin-left: 1em; }
+
+.article-meta {
+  margin-left: 2.2em;
+  margin-bottom: 2.2em; }
+
+.archive-title {
+  font-size: 1em; }
+
+.article-title {
+  font-size: 2em; }
+
+.article-content {
+  margin-left: 2.2em; }
+
+.fineprint {
+  text-align: center;
+  font-size: .9em;
+  margin-top: .5em; }
+
+.tag-low {
+  font-size: .8em;
+  font-weight: 200; }
+
+.tag-medium {
+  font-size: 1.2em;
+  font-weight: 600; }
+
+.tag-high {
+  font-size: 1.8em;
+  font-weight: 800; }
+
+.navigation {
+  font-size: 1.2em;
+  border-bottom: 1px solid; }
+
+pre {
+  overflow: auto;
+  margin-left: 1em;
+  padding: 0.5em;
+  border-left: 1px dashed;
+  background-color: white;
+  padding: .75em .5em;
+  font-family: unquote mono-font; }
+
+tt {
+  font-size: .9em;
+  font-family: unquote mono-font; }
 
 /* Stolen from lisppaste for the colorize output of 3bmd */
-.paste { background-color: #F4F4F4; color: black; }
-.paste:hover { background-color: #F4F4F4; color: black; }
-.symbol { color : #770055; background-color : transparent; border: 0px; margin: 0px;}
-.special { color : #FF5000; background-color : inherit; }
-.keyword { color : #770000; background-color : inherit; }
-.comment { color : #007777; background-color : inherit; }
-.string { color : #777777; background-color : inherit; }
-.atom { color : #314F4F; background-color : inherit; }
-.macro { color : #FF5000; background-color : inherit; }
-.variable { color : #36648B; background-color : inherit; }
-.function { color : #8B4789; background-color : inherit; }
-.attribute { color : #FF5000; background-color : inherit; }
-.character { color : #0055AA; background-color : inherit; }
-.syntaxerror { color : #FF0000; background-color : inherit; }
-.diff-deleted { color : #5F2121; background-color : inherit; }
-.diff-added { color : #215F21; background-color : inherit; }
-span.paren1 { background-color : inherit; -webkit-transition: background-color 0.2s linear; }
-span.paren1:hover { color : inherit; background-color : #BAFFFF; }
-span.paren2 { background-color : inherit; -webkit-transition: background-color 0.2s linear; }
-span.paren2:hover { color : inherit; background-color : #FFCACA; }
-span.paren3 { background-color : inherit; -webkit-transition: background-color 0.2s linear; }
-span.paren3:hover { color : inherit; background-color : #FFFFBA; }
-span.paren4 { background-color : inherit; -webkit-transition: background-color 0.2s linear; }
-span.paren4:hover { color : inherit; background-color : #CACAFF; }
-span.paren5 { background-color : inherit; -webkit-transition: background-color 0.2s linear; }
-span.paren5:hover { color : inherit; background-color : #CAFFCA; }
-span.paren6 { background-color : inherit; -webkit-transition: background-color 0.2s linear; }
-span.paren6:hover { color : inherit; background-color : #FFBAFF; }
+.paste {
+  background-color: #F4F4F4;
+  color: black; }
 
-@media (max-width: 680px) {
+.paste:hover {
+  background-color: #F4F4F4;
+  color: black; }
 
-    #content {
-        padding-top: 0em
-    }
+.symbol {
+  color: #770055;
+  background-color: transparent;
+  border: 0px;
+  margin: 0px; }
 
-    .title {
-        margin-left: 0.1em;
-    }
+.special {
+  color: #FF5000;
+  background-color: inherit; }
 
-    .article-meta {
-        margin-bottom: 1em;
-    }
+.keyword {
+  color: #770000;
+  background-color: inherit; }
 
-    .article-meta, .article-content {
-        float: left;
-        margin-left: 0em;
-        margin-right: 0em;
-        width: 90%;
-        padding-left: 5%;
-    }
+.comment {
+  color: #007777;
+  background-color: inherit; }
 
-    .article, .article-content {
-        margin-left: 0em;
-        text-align: justify;
-    }
+.string {
+  color: #777777;
+  background-color: inherit; }
 
-    img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-    }
+.atom {
+  color: #314F4F;
+  background-color: inherit; }
 
-    #coleslaw-logo {
-        float: none;
-    }
+.macro {
+  color: #FF5000;
+  background-color: inherit; }
 
-    #coleslaw-logo img {
-        margin-left: auto;
-        margin-right: auto;
-        float: none;
-        width: auto;
-    }
+.variable {
+  color: #36648B;
+  background-color: inherit; }
 
-    .fineprint a img {
-        width: auto;
-        clear: both;
-    }
-}
+.function {
+  color: #8B4789;
+  background-color: inherit; }
+
+.attribute {
+  color: #FF5000;
+  background-color: inherit; }
+
+.character {
+  color: #0055AA;
+  background-color: inherit; }
+
+.syntaxerror {
+  color: #FF0000;
+  background-color: inherit; }
+
+.diff-deleted {
+  color: #5F2121;
+  background-color: inherit; }
+
+.diff-added {
+  color: #215F21;
+  background-color: inherit; }
+
+span.paren1 {
+  background-color: inherit;
+  -webkit-transition: background-color 0.2s linear; }
+
+span.paren1:hover {
+  color: inherit;
+  background-color: #BAFFFF; }
+
+span.paren2 {
+  background-color: inherit;
+  -webkit-transition: background-color 0.2s linear; }
+
+span.paren2:hover {
+  color: inherit;
+  background-color: #FFCACA; }
+
+span.paren3 {
+  background-color: inherit;
+  -webkit-transition: background-color 0.2s linear; }
+
+span.paren3:hover {
+  color: inherit;
+  background-color: #FFFFBA; }
+
+span.paren4 {
+  background-color: inherit;
+  -webkit-transition: background-color 0.2s linear; }
+
+span.paren4:hover {
+  color: inherit;
+  background-color: #CACAFF; }
+
+span.paren5 {
+  background-color: inherit;
+  -webkit-transition: background-color 0.2s linear; }
+
+span.paren5:hover {
+  color: inherit;
+  background-color: #CAFFCA; }
+
+span.paren6 {
+  background-color: inherit;
+  -webkit-transition: background-color 0.2s linear; }
+
+span.paren6:hover {
+  color: inherit;
+  background-color: #FFBAFF; }
+
+/* @media (max-width: 680px) { */
+/*  */
+/*     #content { */
+/*         padding-top: 0em */
+/*     } */
+/*  */
+/*     .title { */
+/*         margin-left: 0.1em; */
+/*     } */
+/*  */
+/*     .article-meta { */
+/*         margin-bottom: 1em; */
+/*     } */
+/*  */
+/*     .article-meta, .article-content { */
+/*         float: left; */
+/*         margin-left: 0em; */
+/*         margin-right: 0em; */
+/*         width: 90%; */
+/*         padding-left: 5%; */
+/*     } */
+/*  */
+/*     .article, .article-content { */
+/*         margin-left: 0em; */
+/*         text-align: justify; */
+/*     } */
+/*  */
+/*     img { */
+/*         display: block; */
+/*         margin-left: auto; */
+/*         margin-right: auto; */
+/*         width: 100%; */
+/*     } */
+/*  */
+/*     #coleslaw-logo { */
+/*         float: none; */
+/*     } */
+/*  */
+/*     #coleslaw-logo img { */
+/*         margin-left: auto; */
+/*         margin-right: auto; */
+/*         float: none; */
+/*         width: auto; */
+/*     } */
+/*  */
+/*     .fineprint a img { */
+/*         width: auto; */
+/*         clear: both; */
+/*     } */
+/* } */
+
+/*# sourceMappingURL=style.css.map */
