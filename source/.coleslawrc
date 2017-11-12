@@ -25,7 +25,8 @@
            ; (versioned)    ;; *Remove comment to enable symlinked, timestamped deploys.
           )
  :sitenav ((:url "http://twitter.com/guicho271828" :name "Twitter")
-           (:url "http://github.com/guicho271828" :name "Github"))
+           (:url "http://github.com/guicho271828" :name "Github")
+           (:url "https://www.linkedin.com/in/masataro-asai-158a0638/" :name "LinkedIn"))
  :staging-dir "/tmp/guicho271828.github.com/"  ;; for Coleslaw to do intermediate work, default: "/tmp/coleslaw"
 )
 
