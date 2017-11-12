@@ -16,7 +16,7 @@
  :excerpt-sep "<!--more-->"           ;; to set the separator for excerpt in content
  :separator "---"
  :feeds ("lisp")
- :plugins ((sane-deploy "--exclude" ".git/" "--copy-links")
+ :plugins ((sane-deploy "--exclude" ".gitignore" "--exclude" ".git/" "--copy-links")
            (analytics :tracking-code "foo")
            (disqus :shortname "guicho271828")
            ; (incremental)  ;; *Remove comment to enable incremental builds.
