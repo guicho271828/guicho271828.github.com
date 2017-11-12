@@ -13,17 +13,17 @@ URL: publications/index.html
    In *AAAI-2018* . [Extended manuscript on Arxiv.](https://arxiv.org/abs/1705.00154)
 2. Masataro Asai, Akihiro Kishimoto, Adi Botea, Radu Marinescu, Elizabeth Daly
    M, and Spyros Kotoulas. 2017. Efficient Optimal Search under Expensive Edge Cost
-   Computation. In *IJCAI-2017*. [pdf](../static/publications/ijcai17.pdf)
-2.  Asai, M.; Fukunaga, A: 2017. "Exploration Among and Within Plateaus in Greedy Best-First Search". In *ICAPS2017*. [pdf](../static/publications/icaps17.pdf)
+   Computation. In *IJCAI-2017*. [pdf](/static/publications/ijcai17.pdf)
+2.  Asai, M.; Fukunaga, A: 2017. "Exploration Among and Within Plateaus in Greedy Best-First Search". In *ICAPS2017*. [pdf](/static/publications/icaps17.pdf)
 1.  Asai, M.; Fukunaga, A: 2017. "Tie-Breaking Strategies for Cost-Optimal Best First Search." Journal of Artificial Intelligence Research 58 (2017): 67-121. [pdf](http://www.jair.org/papers/paper5249.html)
 2.  Asai, M.; Fukunaga, A: 2016. Tiebreaking Strategies for A\* Search: How to Explore the Final Frontier.
-    In *AAAI-2016*.  [pdf](../static/publications/aaai16.pdf) [presentation](http://www.slideshare.net/asaimasataro/tiebreaking-strategies-for-a-search-how-to-explore-the-final-frontier) [poster](../static/publications/aaai16-poster.pdf).
+    In *AAAI-2016*.  [pdf](/static/publications/aaai16.pdf) [presentation](http://www.slideshare.net/asaimasataro/tiebreaking-strategies-for-a-search-how-to-explore-the-final-frontier) [poster](/static/publications/aaai16-poster.pdf).
     (Also submitted to Japanese Society for Artificial Intelligence, received JSAI Annual Conference Student Incentive Award)
 3.  Asai, M.; Fukunaga, A: 2015. Solving Large-Scale Planning Problems by
-    Decomposition and Macro Generation. In *ICAPS2015*. [pdf](../static/publications/icaps15.pdf) . CAP planner is
+    Decomposition and Macro Generation. In *ICAPS2015*. [pdf](/static/publications/icaps15.pdf) . CAP planner is
     available at <https://github.com/guicho271828/CAP> .
 4.  Asai, M.; Fukunaga, A: 2014. Fully Automated Cyclic Planning for Large-Scale
-    Manufacturing Domains. In *ICAPS2014*. [pdf](icaps14.pdf) [poster](../static/publications/icaps14-poster.pdf) [presentation](../static/publications/icaps14/)
+    Manufacturing Domains. In *ICAPS2014*. [pdf](icaps14.pdf) [poster](/static/publications/icaps14-poster.pdf) [presentation](/static/publications/icaps14/)
 
 Presentation can be moved forward/backward with N/P key.
 [For the further help and usage, click here](http://guicho271828.github.io/another-org-info/).
@@ -44,7 +44,7 @@ Presentation can be moved forward/backward with N/P key.
     (ICAPS2016). [pdf](hsdip16.pdf) [presentation](https://guicho271828.github.io/2016-06-13-hsdip/)
 2.  Asai, M.; Fukunaga, A: 2014. Applying Problem Decomposition to Extremely Large
     Planning Domains. Knowledge Engineering for Planning and Scheduling (KEPS) Workshop
-    (ICAPS2014). [pdf](keps14.pdf) (<del>submitted version</del> -> final version) [poster](../static/publications/keps14-poster.pdf) [presentation](../static/publications/keps14/)
+    (ICAPS2014). [pdf](keps14.pdf) (<del>submitted version</del> -> final version) [poster](/static/publications/keps14-poster.pdf) [presentation](/static/publications/keps14/)
 
 ## Software
 
