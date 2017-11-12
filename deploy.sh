@@ -7,7 +7,7 @@
 
 (
     cd deploy
-    git add -a $(git ls-files -o)
-    git commit -a -m "deploy"
+    git add -A
+    git commit -m "deploy"
     git push
 )

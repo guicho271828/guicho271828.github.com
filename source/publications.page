@@ -6,7 +6,7 @@ format: md
 URL: publications/index.html
 ---
 
-# Peer-Reviewed Papers (In Chronological Order)
+## Peer-Reviewed Papers (In Chronological Order)
 
 1. Asai, M.; Fukunaga, A: 2017. Classical Planning in Deep Latent Space:
    Bridging the Subsymbolic-Symbolic Boundary.
@@ -28,7 +28,7 @@ URL: publications/index.html
 Presentation can be moved forward/backward with N/P key.
 [For the further help and usage, click here](http://guicho271828.github.io/another-org-info/).
 
-# Workshop papers
+## Workshop papers
 
 1.  Asai, M.; Fukunaga, A: 2017. Classical Planning in Deep Latent Space:
     From Unlabeled Images to PDDL (and back).
@@ -46,7 +46,7 @@ Presentation can be moved forward/backward with N/P key.
     Planning Domains. Knowledge Engineering for Planning and Scheduling (KEPS) Workshop
     (ICAPS2014). [pdf](keps14.pdf) (<del>submitted version</del> -> final version) [poster](../static/publications/keps14-poster.pdf) [presentation](../static/publications/keps14/)
 
-# Software
+## Software
 
 See [my github repo](https://github.com/guicho271828) for the latest activity!
 
@@ -80,6 +80,8 @@ See [my github repo](https://github.com/guicho271828) for the latest activity!
         would be useful. It waits for the changes, and if a change is detected, it runs
         `make`, then notify the result via `inotify` (pop up inteface available in gtk).
 
-# Local Variables:
-# mode: markdown
-# End:
+<!--
+Local Variables:
+mode: markdown
+End:
+-->

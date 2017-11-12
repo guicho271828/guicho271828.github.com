@@ -15,7 +15,7 @@ URL: profile/index.html
     -   See [Publications](../publications/) for more details.
 -   [CV](../static/cv.pdf)
 
-# Past Interests
+## Past Interests
 
 I received B.Eng. from the Faculty of Engineering, University of Tokyo.
 I was in [Yoshimura & Izmi Lab](http://save.sys.t.u-tokyo.ac.jp/index_e.html), whose members are mainly interested in FEM/MPS and *Traffic Simulation*.
@@ -24,7 +24,7 @@ My graduate thesis was about using stochastic 2D agents for generating
 the cooperative behaviors in the traffic simulation. (The paper is in
 Japanese, so I do not make it public here.)
 
-# Hobby / Personal Activity
+## Hobby / Personal Activity
 
 -   Programming Language and Common Lisp
 -   Electric circuits and Microcontroller
@@ -34,6 +34,8 @@ Japanese, so I do not make it public here.)
 -   [Road racers (bicycles)](http://runkeeper.com/user/941210962/profile)
 -   FPGA wannabe.
 
-# Local Variables:
-# mode: markdown
-# End:
+<!--
+Local Variables:
+mode: markdown
+End:
+-->
