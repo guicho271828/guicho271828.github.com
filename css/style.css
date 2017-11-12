@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #333;
   font-family: Helvetica, Noto Sans; }
 
 @media screen and (min-width: 200px) and (max-width: 300px) {
@@ -36,7 +36,7 @@ body {
   body {
     font-size: 20.4px; } }
 #content {
-  background: #fff;
+  background: BlanchedAlmond;
   padding-top: 1em; }
 
 #header {
