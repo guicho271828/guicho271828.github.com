@@ -1,34 +1,32 @@
 ;;; -*- mode : lisp -*-
 (;; Required information
- :author "guicho"                         ;; to be placed on post pages and in the copyright/CC-BY-SA notice
- :deploy-dir "deploy/"                ;; for Coleslaw's generated HTML to go in
- :domain "https://guicho.github.com"      ;; to generate absolute links to the site content
+ :author "Masataro Asai"                         ;; to be placed on post pages and in the copyright/CC-BY-SA notice
+ :deploy-dir "../deploy/"                ;; for Coleslaw's generated HTML to go in
+ :domain "https://guicho271828.github.com"      ;; to generate absolute links to the site content
  :routing ((:post           "posts/~a") ;; to determine the URL scheme of content on the site
            (:tag-index      "tag/~a")
            (:month-index    "date/~a")
            (:numeric-index  "~d")
            (:feed           "~a.xml")
            (:tag-feed       "tag/~a.xml"))
- :title "Improved Means for Achieving Deteriorated Ends" ;; a site title
+ :title "CL-USER> (start-up (the engine *bp-ze*))" ;; a site title
  :theme "hyde"                        ;; to select one of the themes in "coleslaw/themes/"
  
  ;; Optional information
- :excerpt-sep "<!--more-->"           ;; to set the separator for excerpt in content 
+ :excerpt-sep "<!--more-->"           ;; to set the separator for excerpt in content
+ :separator "---"
  :feeds ("lisp")
  :plugins ((analytics :tracking-code "foo")
-           (disqus :shortname "my-site-name")
+           (disqus :shortname "guicho271828")
            ; (incremental)  ;; *Remove comment to enable incremental builds.
            (mathjax)
            (sitemap)
            (static-pages)
            ; (versioned)    ;; *Remove comment to enable symlinked, timestamped deploys.
           )
- :sitenav ((:url "http://redlinernotes.com/" :name "Home")
-           (:url "http://twitter.com/redline6561" :name "Twitter")
-           (:url "http://github.com/redline6561" :name "Code")
-           (:url "http://soundcloud.com/redlinernotes" :name "Music")
-           (:url "http://redlinernotes.com/docs/talks/" :name "Talks"))
- :staging-dir "/tmp/coleslaw/"  ;; for Coleslaw to do intermediate work, default: "/tmp/coleslaw"
+ :sitenav ((:url "http://twitter.com/guicho271828" :name "Twitter")
+           (:url "http://github.com/guicho271828" :name "Github"))
+ :staging-dir "/tmp/guicho271828.github.com/"  ;; for Coleslaw to do intermediate work, default: "/tmp/coleslaw"
 )
 
 ;; * Prerequisites described in plugin docs.
