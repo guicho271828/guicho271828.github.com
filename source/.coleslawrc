@@ -10,7 +10,7 @@
            (:feed           "~a.xml")
            (:tag-feed       "tag/~a.xml"))
  :title "CL-USER> (start-up (the engine *bp-ze*))" ;; a site title
- :theme "hyde"                        ;; to select one of the themes in "coleslaw/themes/"
+ :theme "mine"                        ;; to select one of the themes in "coleslaw/themes/"
  
  ;; Optional information
  :excerpt-sep "<!--more-->"           ;; to set the separator for excerpt in content
