@@ -1,4 +1,6 @@
 *.scssc
 *.scss
+*.map
+**/.sass-cache/
 *~
 #*
