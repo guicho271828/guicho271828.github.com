@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link>https://guicho271828.github.io</link> <atom:link href="https://guicho271828.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Mon, 13 Nov 2017 17:29:56 +0900</pubDate> <item> <title>2017-11-06</title> <link>https://guicho271828.github.io/posts/2017-11-06.html</link> <pubDate>2017-11-06 16:04:54</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/2017-11-06.html</guid> <category><![CDATA[ lisp ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link>https://guicho271828.github.io</link> <atom:link href="https://guicho271828.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Mon, 13 Nov 2017 17:31:55 +0900</pubDate> <item> <title>2017-11-06</title> <link>https://guicho271828.github.io/posts/2017-11-06.html</link> <pubDate>2017-11-06 16:04:54</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/2017-11-06.html</guid> <category><![CDATA[ lisp ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
 
 <!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
 
@@ -181,7 +181,7 @@ keycode  19 = asciitilde 0 asciitilde 0
 
 <p>A. ループ(など)の中の条件判定を、内側に書いたままで外側に出せます。</p>
 
-<!-- more -->
+<!--more-->
 
 <pre><code><span class="code"><span class="paren1">(<span class="code"><i><span class="symbol">with-inner</span></i> <span class="paren2">(<span class="code">body</span>)</span>
     <span class="paren2">(<span class="code">iter <span class="paren3">(<span class="code">for i from 0 to 5</span>)</span>
@@ -286,7 +286,7 @@ keycode  19 = asciitilde 0 asciitilde 0
  ]]></description> </item><item> <title>Common Lisp で Code Walker を実装するなら その②</title> <link>https://guicho271828.github.io/posts/Common-Lisp-で-Code-Walker-を実装するなら-その②.html</link> <pubDate>2013-05-06 15:26</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/Common-Lisp-で-Code-Walker-を実装するなら-その②.html</guid> <category><![CDATA[ old-blog ]]></category><category><![CDATA[ lisp ]]></category> <description><![CDATA[ <p>前回の続き。状態を持つmacroletを書くにはどうすればいいのか！？
 これが答えだ！</p>
 
-<!-- more -->
+<!--more-->
 
 <h1>回答: Compile-time で restart-bind</h1>
 
@@ -312,7 +312,7 @@ keycode  19 = asciitilde 0 asciitilde 0
 節としての役割を与えたい時。マクロは引数のS式を好きに扱えるので、なんで
 もありです。だから、例えば。</p>
 
-<!-- more -->
+<!--more-->
 
 <pre><code>
 (defun walk-tree (fn tree)

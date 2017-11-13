@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom"> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link href="https://guicho271828.github.io"/> <link type="application/atom+xml" rel="self" href="https://guicho271828.github.io/atom.xml"/> <updated>Mon, 13 Nov 2017 17:29:56 +0900</updated> <author> <name>Masataro Asai</name> </author> <entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-06.html"/> <title>2017-11-06</title> <published>2017-11-06 16:04:54</published> <updated>2017-11-06 16:04:54</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link href="https://guicho271828.github.io"/> <link type="application/atom+xml" rel="self" href="https://guicho271828.github.io/atom.xml"/> <updated>Mon, 13 Nov 2017 17:31:55 +0900</updated> <author> <name>Masataro Asai</name> </author> <entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-06.html"/> <title>2017-11-06</title> <published>2017-11-06 16:04:54</published> <updated>2017-11-06 16:04:54</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
 
 &lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
 
@@ -181,7 +181,7 @@ keycode  19 = asciitilde 0 asciitilde 0
 
 &lt;p&gt;A. ループ(など)の中の条件判定を、内側に書いたままで外側に出せます。&lt;/p&gt;
 
-&lt;!-- more --&gt;
+&lt;!--more--&gt;
 
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;code&quot;&gt;&lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;with-inner&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body&lt;/span&gt;)&lt;/span&gt;
     &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;iter &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;for i from 0 to 5&lt;/span&gt;)&lt;/span&gt;
@@ -286,7 +286,7 @@ keycode  19 = asciitilde 0 asciitilde 0
 </content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Common-Lisp-で-Code-Walker-を実装するなら-その②.html"/> <title>Common Lisp で Code Walker を実装するなら その②</title> <published>2013-05-06 15:26</published> <updated>2013-05-06 15:26</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;前回の続き。状態を持つmacroletを書くにはどうすればいいのか！？
 これが答えだ！&lt;/p&gt;
 
-&lt;!-- more --&gt;
+&lt;!--more--&gt;
 
 &lt;h1&gt;回答: Compile-time で restart-bind&lt;/h1&gt;
 
@@ -312,7 +312,7 @@ keycode  19 = asciitilde 0 asciitilde 0
 節としての役割を与えたい時。マクロは引数のS式を好きに扱えるので、なんで
 もありです。だから、例えば。&lt;/p&gt;
 
-&lt;!-- more --&gt;
+&lt;!--more--&gt;
 
 &lt;pre&gt;&lt;code&gt;
 (defun walk-tree (fn tree)
