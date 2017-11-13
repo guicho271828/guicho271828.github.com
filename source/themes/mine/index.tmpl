@@ -25,8 +25,7 @@ End:
   <div id="tagsoup">
     This blog covers
     {foreach $tag in $tags}
-    <a href="/{$tag.url}">{$tag.name}</a>
-    {if not isLast($tag)},{sp}{/if}
+    <a href="/{$tag.url}">{$tag.name}</a>{if not isLast($tag)},{sp}{/if}
     {/foreach}
   </div>{\n}
   {/if}
@@ -34,8 +33,7 @@ End:
   <div id="monthsoup">
     View content from
     {foreach $month in $months}
-    <a href="/{$month.url}">{$month.name}</a>
-    {if not isLast($month)},{sp}{/if}
+    <a href="/{$month.url}">{$month.name}</a>{if not isLast($month)},{sp}{/if}
     {/foreach}
   </div>{\n}
 </nav>
