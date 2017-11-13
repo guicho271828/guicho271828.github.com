@@ -5,13 +5,13 @@
 Local Variables:
 mode : html
 End:
--->
+-->{\n}
 <div class="article-meta">{\n}
   <h1 class="title">{$post.title}</h1>{\n}
   <div class="tags">{\n}
     {if $post.tags}
       Tagged as {foreach $tag in $post.tags}
-        <a href="/{$tag.url}">{$tag.name}</a>{nil}
+        <a href="/{$tag.url}">{$tag.name}</a>{nil}{\n}
           {if not isLast($tag)},{sp}{/if}
       {/foreach}
     {/if}

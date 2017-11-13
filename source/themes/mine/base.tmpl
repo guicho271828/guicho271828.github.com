@@ -6,27 +6,25 @@
 Local Variables:
 mode : html
 End:
--->
-<html lang="{$config.lang}">
-  <head>
-    <title>{$config.title}</title>
-    <meta http-equiv="content-type" content="text/html; charset={$config.charset}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
-    <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" />
-    <link href= "/css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="alternate" href="/rss.xml" type="application/rss+xml" />
+-->{\n}
+<html lang="{$config.lang}">{\n}
+  <head>{\n}
+    <title>{$config.title}</title>{\n}
+    <meta http-equiv="content-type" content="text/html; charset={$config.charset}" />{\n}
+    <meta name="viewport" content="width=device-width, initial-scale=1">{\n}
+    <link href="//fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />{\n}
+    <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" />{\n}
+    <link href= "/css/style.css" rel="stylesheet" type="text/css" />{\n}
+    <link rel="alternate" href="/rss.xml" type="application/rss+xml" />{\n}
     {if $injections.head}
       {foreach $injection in $injections.head}
         {$injection |noAutoescape}
       {/foreach}
-    {/if}
-  </head>
-  <body>
-    <div class="navigation">
-      <span class="sitenav">
-        <a href="/">{$config.title}</a>
-      </span>
+    {/if}{\n}
+  </head>{\n}
+  <body>{\n}
+    <div class="navigation">{\n}
+      <span class="sitenav"> <a href="/">{$config.title}</a> </span>{\n}
       {foreach $link in $config.sitenav}
       <span class="sitenav">
         {if $link.relative}
@@ -34,17 +32,17 @@ End:
         {else}
         <a href="{$link.url}">{$link.name}</a>
         {/if}
-      </span>
+      </span>{\n}
       {/foreach}
-    </div>
-    <div id="content">
+    </div>{\n}
+    <div id="content">{\n}
       {$raw |noAutoescape}
-    </div>
+    </div>{\n}
     {if $injections.body}
       {foreach $injection in $injections.body}
         {$injection |noAutoescape}
       {/foreach}
-    {/if}
+    {/if}{\n}
     <div class="fineprint">
       <hr>
       Unless otherwise credited all material
@@ -59,7 +57,7 @@ End:
       <a id="coleslaw-logo" href="https://github.com/redline6561/coleslaw">
         <img src="/css/logo_small.jpg" alt="Coleslaw logo" />
       </a>
-    </div>
-  </body>
+    </div>{\n}
+  </body>{\n}
 </html>
 {/template}
