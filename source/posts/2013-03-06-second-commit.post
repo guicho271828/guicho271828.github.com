@@ -1,9 +1,8 @@
 ---
-
 title: "second commit"
 date: 2013-03-06 23:03
-
-
+tags: old-blog
+format: md
 ---
 
 早くmarkdownからorgに移行しないとな。
