@@ -35,9 +35,9 @@ End:
       </span>{\n}
       {/foreach}
     </div>{\n}
-    <div id="content">{\n}
+    <main id="content">{\n}
       {$raw |noAutoescape}
-    </div>{\n}
+    </main>{\n}
     {if $injections.body}
       {foreach $injection in $injections.body}
         {$injection |noAutoescape}

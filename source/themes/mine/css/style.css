@@ -37,10 +37,16 @@ body {
     font-size: 20.4px; } }
 #content {
   background: BlanchedAlmond;
-  padding-top: 1em; }
+  padding-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60em; }
 
-span.sitenav:not(:last-child):after {
-  content: '|'; }
+.navigation {
+  font-size: 1.2em;
+  border-bottom: 1px solid; }
+  .navigation span.sitenav:not(:last-child):after {
+    content: '|'; }
 
 a {
   text-decoration: none;
@@ -74,10 +80,6 @@ a {
 .tag-high {
   font-size: 1.8em;
   font-weight: 800; }
-
-.navigation {
-  font-size: 1.2em;
-  border-bottom: 1px solid; }
 
 pre {
   overflow: auto;
