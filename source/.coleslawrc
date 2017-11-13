@@ -17,11 +17,11 @@
  :separator "---"
  :feeds ("lisp")
  :plugins ((sane-deploy "--exclude" ".gitignore" "--exclude" ".git/" "--copy-links")
-           (analytics :tracking-code "foo")
-           (disqus :shortname "guicho271828")
+           ;; (analytics :tracking-code "foo")
+           ;; (disqus :shortname "guicho271828")
            ; (incremental)  ;; *Remove comment to enable incremental builds.
            (mathjax)
-           (sitemap)
+           ;; (sitemap)
            (static-pages)
            ; (versioned)    ;; *Remove comment to enable symlinked, timestamped deploys.
           )
