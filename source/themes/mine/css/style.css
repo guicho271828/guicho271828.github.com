@@ -3,28 +3,28 @@ body {
   font-family: Helvetica, Noto Sans;
   font-size: 14px; }
 
-@media screen and (min-width: 0px) {
+@media screen and (min-width: 105px) {
   body {
     font-size: 1.75px; } }
-@media screen and (min-width: 100px) {
+@media screen and (min-width: 210px) {
   body {
     font-size: 3.5px; } }
-@media screen and (min-width: 200px) {
+@media screen and (min-width: 315px) {
   body {
     font-size: 5.25px; } }
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 420px) {
   body {
     font-size: 7px; } }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 525px) {
   body {
     font-size: 8.75px; } }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 630px) {
   body {
     font-size: 10.5px; } }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 735px) {
   body {
     font-size: 12.25px; } }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 840px) {
   body {
     font-size: 14px; } }
 #content {
@@ -36,7 +36,11 @@ body {
 
 .navigation {
   font-size: 1.2em;
-  border-bottom: 1px solid; }
+  background-color: lightgrey;
+  color: grey;
+  text-shadow: 1px 1px 1px black; }
+  .navigation a {
+    color: gray; }
   .navigation span.sitenav:not(:last-child):after {
     content: '|'; }
 

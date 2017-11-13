@@ -1,21 +1,26 @@
 {namespace coleslaw.theme.mine}
 
 {template index}
-<h1 class="title">{$index.title}</h1>
+
 <!--
 Local Variables:
 mode : html
 End:
--->{\n}
+  -->{\n}
+<article>
+<header>{\n}
+<h1 class="title">{$index.title}</h1>
+</header>
+
 {foreach $obj in $index.content}
-<article>{\n}
-  <header>
-    <h1><a href="/{$obj.url}">{$obj.title}</a></h1>{\n}
-    <div class="date"> posted on {$obj.date}</div>{\n}
-  </header>
+<div class="content">{\n}
+  <h1><a href="/{$obj.url}">{$obj.title}</a></h1>{\n}
+  <div class="date"> posted on {$obj.date}</div>{\n}
   <div class="excerpt">{$obj.excerpt |noAutoescape}</div>{\n}
-</article>{\n}
+</div>{\n}
 {/foreach}
+
+<article>
 
 
 <nav>{\n}

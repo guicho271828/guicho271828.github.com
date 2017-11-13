@@ -4,9 +4,13 @@ body {
     font-size: 14px;
 }
 @for $i from 1 through 8 {
-    @media screen and (min-width: ($i - 1)*100px) {
+    @media screen and (min-width: $i*105px) {
         body {
             font-size: $i*1.75px;
+            // i=7
+            // width:700
+            // font: 12.25
+            // 55em: 673
         }
     }
 }
@@ -21,7 +25,13 @@ body {
 
 .navigation {
     font-size: 1.2em;
-    border-bottom: 1px solid;
+    // border-bottom: 1px solid;
+    background-color: lightgrey;
+    color: grey;
+    text-shadow: 1px 1px 1px black;
+    a {
+        color: gray;
+    }
     span.sitenav:not(:last-child):after {
         content: '|';
     }
