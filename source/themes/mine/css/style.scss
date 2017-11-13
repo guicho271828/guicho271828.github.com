@@ -1,5 +1,18 @@
+// grain, blackboard,oxblood,tan
+
+// $highlight:#373737;
+// $background1:#f4f4f4;
+// $text1:#c0b283;
+// $background2:#ffffff;
+// $text2:#dcd0c0;
+
+$highlight:darkred;
+$background1:#373737;
+$background2:BlanchedAlmond;
+$text:#373737;
+
 body {
-    background-color: #333;
+    background-color: $background1;
     font-family: Helvetica, Noto Sans;
     font-size: 14px;
     margin: 0;
@@ -8,22 +21,18 @@ body {
     @media screen and (min-width: $i*105px) {
         body {
             font-size: $i*1.75px;
-            // i=7
-            // width:700
-            // font: 12.25
-            // 55em: 673
         }
     }
 }
 
 #content {
-    background: BlanchedAlmond;
+    background: $background2;
+    color: $text;
     padding-top: 1em;
     margin-left: auto;
     margin-right: auto;
     max-width: 55em;
     margin-top: 5em;
-    
 }
 
 .navigation {
@@ -31,28 +40,22 @@ body {
     position: fixed;
     top: 0;
     padding: 0.5em;
-    // font-size: 1.2em;
+    font-size: 2em;
     border-bottom: 1px solid;
-    background-color: BlanchedAlmond;
-    color: black;
+    background: $background2;
+    color: $text;
     text-shadow: 1px 1px 1px grey;
-    a {
-        color: gray;
-    }
     .title {
         font-size: 2em;
+        // margin-right: auto;
+        left: 0;
     }
-    span.sitenav:not(:last-child):after {
-        content: '|';
+    span.sitenav {
+        margin: 2em;
+        // &:not(:last-child):after {
+        //     content: '|';
+        // }
     }
-}
-
-a {
-    text-decoration: none;
-    color: darkred;
-}
-.date {
-    font-style: italic;
 }
 article {
     padding : 3em;
@@ -62,6 +65,14 @@ article {
             font-size: 2.2em;
         }
     }
+}
+
+a {
+    text-decoration: none;
+    color: $highlight;
+}
+.date {
+    font-style: italic;
 }
 .fineprint {
     text-align: center;
