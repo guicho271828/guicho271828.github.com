@@ -80,8 +80,3 @@ See [my github repo](https://github.com/guicho271828) for the latest activity!
         would be useful. It waits for the changes, and if a change is detected, it runs
         `make`, then notify the result via `inotify` (pop up inteface available in gtk).
 
-<!--
-Local Variables:
-mode: markdown
-End:
--->
