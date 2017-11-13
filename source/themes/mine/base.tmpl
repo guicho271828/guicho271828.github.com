@@ -23,7 +23,7 @@ End:
     {/if}{\n}
   </head>{\n}
   <body>{\n}
-    <div class="navigation">{\n}
+    <nav class="navigation">{\n}
       <span class="sitenav"> <a href="/">{$config.title}</a> </span>{\n}
       {foreach $link in $config.sitenav}
       <span class="sitenav">
@@ -34,7 +34,7 @@ End:
         {/if}
       </span>{\n}
       {/foreach}
-    </div>{\n}
+    </nav>{\n}
     <main id="content">{\n}
       {$raw |noAutoescape}
     </main>{\n}
@@ -43,7 +43,7 @@ End:
         {$injection |noAutoescape}
       {/foreach}
     {/if}{\n}
-    <div class="fineprint">
+    <footer class="fineprint">
       <hr>
       Unless otherwise credited all material
       {if $config.license}
@@ -57,7 +57,7 @@ End:
       <a id="coleslaw-logo" href="https://github.com/redline6561/coleslaw">
         <img src="/css/logo_small.jpg" alt="Coleslaw logo" />
       </a>
-    </div>{\n}
+    </footer>{\n}
   </body>{\n}
 </html>
 {/template}
