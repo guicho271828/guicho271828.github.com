@@ -12,7 +12,7 @@ format: md
 `$octopress-root$/org/` に入れる。そしたら
 `$octopress-root$/source/_posts` にmdファイルが移る。
 
-<!-- more -->
+<!--more-->
 
 Octopressでのブログ生成をEmacsからコマンド一発( `M-x octopost` など)でやれ
 るようになっている。いちいちシェルを開くのもめんどくさい。正直、この程

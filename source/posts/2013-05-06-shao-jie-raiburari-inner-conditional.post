@@ -12,7 +12,7 @@ format: md
 
 A. ループ(など)の中の条件判定を、内側に書いたままで外側に出せます。
 
-<!-- more -->
+<!--more-->
 
 ```cl 
 (with-inner (body)

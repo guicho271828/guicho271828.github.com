@@ -9,7 +9,7 @@ format: md
 前回の続き。状態を持つmacroletを書くにはどうすればいいのか！？
 これが答えだ！
 
-<!-- more -->
+<!--more-->
 
 # 回答: Compile-time で restart-bind
 
