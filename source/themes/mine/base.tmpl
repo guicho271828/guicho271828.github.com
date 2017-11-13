@@ -29,9 +29,9 @@ End:
       {foreach $link in $config.sitenav}
       <span class="sitenav">
         {if $link.relative}
-        <a href="/{$link.url}">{$link.name}</a>
+        <a href="/{$link.url}">{$link.name |noAutoescape}</a>
         {else}
-        <a href="{$link.url}">{$link.name}</a>
+        <a href="{$link.url}">{$link.name |noAutoescape}</a>
         {/if}
       </span>{\n}
       {/foreach}
