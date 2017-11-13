@@ -8,11 +8,11 @@ mode : html
 End:
 -->{\n}
 {foreach $obj in $index.content}
-<div class="article-meta">{\n}
+<article class="article-meta">{\n}
   <a class="article-title" href="/{$obj.url}">{$obj.title}</a>{\n}
   <div class="date"> posted on {$obj.date}</div>{\n}
   <div class="article">{$obj.excerpt |noAutoescape}</div>{\n}
-</div>{\n}
+</article>{\n}
 {/foreach}
 <nav>{\n}
   <div id="relative-nav">
