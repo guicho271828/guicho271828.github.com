@@ -47,31 +47,17 @@ a {
 .date {
   font-style: italic; }
 
-.title {
-  margin-left: 1em; }
-
 article {
   padding: 3em; }
-
-.article-meta {
-  margin-bottom: 2.2em; }
-.article-title {
-  font-size: 2em; }
+  article header {
+    margin-bottom: 2.2em; }
+    article header h1 {
+      font-size: 2.2em; }
 
 .fineprint {
   text-align: center;
   font-size: .9em;
   margin-top: .5em; }
-
-.tag-low {
-  font-size: .8em;
-  font-weight: 200; }
-.tag-medium {
-  font-size: 1.2em;
-  font-weight: 600; }
-.tag-high {
-  font-size: 1.8em;
-  font-weight: 800; }
 
 pre {
   overflow: auto;

@@ -8,8 +8,8 @@ End:
 -->{\n}
 
 <article>
-<header class="article-meta">{\n}
-  <h1 class="title">{$post.title}</h1>{\n}
+<header>{\n}
+  <h1>{$post.title}</h1>{\n}
   <div class="tags">{\n}
     {if $post.tags}
       Tagged as {foreach $tag in $post.tags}
@@ -25,7 +25,7 @@ End:
   </div>{\n}
 </header>{\n}
 
-<div class="article-content">{\n}
+<div class="content">{\n}
   {$post.text |noAutoescape}
 </div>{\n}
 </article>
