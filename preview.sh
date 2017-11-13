@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# retired in favor of coleslaw watch-preview
+
 # ros install clack
 
 cd deploy
