@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link>https://guicho271828.github.io</link> <atom:link href="https://guicho271828.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Mon, 13 Nov 2017 12:21:47 +0900</pubDate> <item> <title>2017-11-06</title> <link>https://guicho271828.github.io/posts/2017-11-06.html</link> <pubDate>2017-11-06 16:04:54</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/2017-11-06.html</guid> <category><![CDATA[ lisp ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link>https://guicho271828.github.io</link> <atom:link href="https://guicho271828.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Mon, 13 Nov 2017 12:27:44 +0900</pubDate> <item> <title>2017-11-13</title> <link>https://guicho271828.github.io/posts/2017-11-13.html</link> <pubDate>2017-11-13 12:23:59</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/2017-11-13.html</guid> <category><![CDATA[ bar ]]></category><category><![CDATA[ baz ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
+
+<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
+
+<p>Restored most of the posts in the old blog.</p>
+
+<!--more-->
+ ]]></description> </item><item> <title>2017-11-06</title> <link>https://guicho271828.github.io/posts/2017-11-06.html</link> <pubDate>2017-11-06 16:04:54</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/2017-11-06.html</guid> <category><![CDATA[ lisp ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
 
 <!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
 
@@ -217,13 +224,4 @@ keycode  19 = asciitilde 0 asciitilde 0
 せめてICAPS workshop 2014 終わってからにするか？</p>
  ]]></description> </item><item> <title>テスト2</title> <link>https://guicho271828.github.io/posts/テスト2.html</link> <pubDate>2014-01-05 13:50</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/テスト2.html</guid> <category><![CDATA[ old-blog ]]></category> <description><![CDATA[ <p>テスト2です。
 octopress, なんかおかしい？</p>
- ]]></description> </item><item> <title>ノートパソコンから投稿</title> <link>https://guicho271828.github.io/posts/ノートパソコンから投稿.html</link> <pubDate>2014-01-05 12:14</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/ノートパソコンから投稿.html</guid> <category><![CDATA[ old-blog ]]></category> <description><![CDATA[ <p>ノートパソコンから投稿テスト。
-環境は(ほぼ)クリーンインストールな13.10。</p>
-
-<p>ビルドに必要だったのは</p>
-
-<pre><code>sudo apt-get install ruby-dev libxml2-dev libxslt-dev g++
-sudo gem install bundler
-bundle install
-</code></pre>
  ]]></description> </item> </channel> </rss>
