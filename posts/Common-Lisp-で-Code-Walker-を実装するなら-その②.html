@@ -12,26 +12,40 @@
   })();
 
 </script> </head> <body> <div class="navigation"> <span class="sitenav"> <a href="/">CL-USER&gt; (start-up (the engine *bp-ze*))</a> </span> <span class="sitenav"> <a href="/profile/">Profile</a> </span><span class="sitenav"> <a href="/publications/">Publications</a> </span><span class="sitenav"> <a href="http://twitter.com/guicho271828">Twitter</a> </span><span class="sitenav"> <a href="http://github.com/guicho271828">Github</a> </span><span class="sitenav"> <a href="https://www.linkedin.com/in/masataro-asai-158a0638/">LinkedIn</a> </span> </div> <div id="content"> <div class="article-meta">
-<h1 class="title">2017-11-06</h1>
+<h1 class="title">Common Lisp で Code Walker を実装するなら その②</h1>
 <div class="tags">
-Tagged as <a href="/tag/lisp.html">lisp</a> </div>
+Tagged as <a href="/tag/old-blog.html">old-blog</a>, <a href="/tag/lisp.html">lisp</a> </div>
 <div class="date">
-Written on 2017-11-06 16:04:54 </div>
+Written on 2013-05-06 15:26 </div>
 </div>
 <div class="article-content">
-<!-- **** your post here (remove this line) **** -->
+<p>前回の続き。状態を持つmacroletを書くにはどうすればいいのか！？
+これが答えだ！</p>
 
-<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
+<!-- more -->
 
-<p>I just migrated from Jekyll to Coleslaw.</p>
+<h1>回答: Compile-time で restart-bind</h1>
 
-<!--more-->
+<p>{% include_code サンプルコード lang:cl walk-tree.lisp %}</p>
 
-<p>This was not the best experinece, but was fun anyways.</p>
+<p>ね、面白いでしょ？ANSI Hyperspecにある <code>*macroexpand-hook*</code> をうまく使っ
+てみました。 <code>my-macro-start</code> が変な感じになっているのは、ここで書いた
+構造が入れ子になってる可能性があるので、スタックフレームをエミュレート
+しているんです。 <strong>ん、え、スタック？</strong></p>
+
+<p>Schemerな人は言いたいことがすぐにわかることでしょう。ANSIの設計の何が悪
+いって、 <code>defmacro</code> が <strong>継続を引数に取ってくれない</strong> ことなんですよ。だ
+から、外側のマクロを展開した時に、内側のマクロ展開を行うときのレキシカ
+ル環境を操作できない。それだから中途半端な code-walker しか <em>簡単には</em>
+実装できないわけです。</p>
+
+<p>うーん、えーと、もう2,3個思いついたはずなんですけど、思いつかなかった
+ので、一つです。なにか他に案がある人はtwitterかgithub経由で教えてくだ
+さい(^^)</p>
  </div>
 <div class="relative-nav">
-<a href="/posts/Component-Abstraction-Planner-Made-Available.html">Previous</a><br>
-
+<a href="/posts/Common-Lisp-で-Code-Walker-を実装するなら.html">Previous</a><br>
+<a href="/posts/紹介-ライブラリ-Inner-conditional.html">Next</a><br>
 </div>
  </div> <div id="disqus_thread"></div>
      <script type="text/javascript">

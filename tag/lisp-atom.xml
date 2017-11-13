@@ -1,9 +1,442 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom"> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link href="https://guicho271828.github.io"/> <link type="application/atom+xml" rel="self" href="https://guicho271828.github.io/atom.xml"/> <updated>Sun, 12 Nov 2017 18:30:17 +0900</updated> <author> <name>Masataro Asai</name> </author> <entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-06.html"/> <title>2017-11-06</title> <published>2017-11-06 16:04:54</published> <updated>2017-11-06 16:04:54</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link href="https://guicho271828.github.io"/> <link type="application/atom+xml" rel="self" href="https://guicho271828.github.io/atom.xml"/> <updated>Mon, 13 Nov 2017 12:21:47 +0900</updated> <author> <name>Masataro Asai</name> </author> <entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-06.html"/> <title>2017-11-06</title> <published>2017-11-06 16:04:54</published> <updated>2017-11-06 16:04:54</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
 
 &lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
 
-&lt;p&gt;I just migrated from Jekyll to Coleslaw. This was not the best experinece, but was fun anyways.&lt;/p&gt;
+&lt;p&gt;I just migrated from Jekyll to Coleslaw.&lt;/p&gt;
 
 &lt;!--more--&gt;
+
+&lt;p&gt;This was not the best experinece, but was fun anyways.&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Recursive-Macroexpansion.html"/> <title>Recursive Macroexpansion</title> <published>2014-05-04 15:56:33 +0900</published> <updated>2014-05-04 15:56:33 +0900</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Yesterday, as a holiday coding, I made yet another macro-expansion system which
+allows for easier compile-time error handling, which I previously described in
+&lt;a href=&quot;http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f&quot; &gt;this post&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;昨日、ゴールデンウィークの遊びコーディングとして、
+&lt;a href=&quot;http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f&quot; &gt;前々から言っていた&lt;/a&gt; ものに相当する、
+リスタートやコンディションと密に連携できるマクロ展開システムを作りました。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Some people may already know that this idea is not so new at all.
+In 
+&lt;a href=&quot;http://ja.reddit.com/r/lisp/comments/1xyux9/macro_system_common_lisp_is_still_hard_to_satisfy/cffz33l&quot; &gt;this post&lt;/a&gt;
+, nsiivola said that we can alternatively use an implementation-specific
+&lt;code&gt;macroexpand-all&lt;/code&gt;. Also, &lt;code&gt;macroexpand-dammit&lt;/code&gt; tries to give the similar feature
+within ANSI CL.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;色々とすでに言われているように実は、
+このライブラリ自体にそんなに新規性はありません。
+まず、同じことを達成するためには、
+&lt;a href=&quot;http://ja.reddit.com/r/lisp/comments/1xyux9/macro_system_common_lisp_is_still_hard_to_satisfy/cffz33l&quot; &gt;nsiivola さんの言った&lt;/a&gt;ように、
+マクロの中で実装依存の &lt;code&gt;macroexpand-all&lt;/code&gt; を使うという手がありました。
+他にも、ANSI CL の中だけで似た機能を作ろうと頑張っている、
+ &lt;code&gt;macroexpand-dammit&lt;/code&gt; を使うという手もありました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;So why I made it? The first reason is that I didn&#039;t want to use the implementation
+specific feature. The second is that, I didn&#039;t want to use &lt;code&gt;macroexpand-dammit&lt;/code&gt;
+which I have a bitter experience with it.
+When I once saw it, it was not maintained, the implementation was tricky,
+it has a bug, lacks test codes, and was also depended by some other famous library SXML, which I have no idea
+about and also lacks test codes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ではなぜ作ったのか?
+第一に、実装依存の要素を使うというのはあまり好きではありませんでした。
+第二に、これは完全に個人的な理由なんですが、
+&lt;code&gt;macroexpand-dammit&lt;/code&gt; には苦い経験があるのであまり使いたくなかったというわけです。
+このライブラリ、まず実装がトリッキー、バグが在る、テストコードがない、という問題だ
+らけのライブラリでした。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I once tried to maintain it on github and have my repo followed in quicklisp thanks to
+zach, but my change made some errors in those dependent libraries, and
+honestly I failed. I neglected. Currently quicklisp follows the older version. 
+And I lack my interest now. (However, now I see some issues
+message from someone, so maybe I&#039;ll try again)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;一度、これを直してgithub上でメンテナっぽく振る舞おうと思い、quicklispにも申請したの
+ですが、
+これを治そうとすると、実は有名なライブラリSXMLがこれに依存しているらしく、そこのコー
+ドを壊してしまうそうです。
+で、さらに悪いことに、「メンテナになるよー」と一旦言ったにも関わらず
+個人的に時間が取れなくて放置してしまったため、
+zachさんには「メンテ出来ないならメンテナになろうとするな」と。正論ですね。すみませ
+ん。そんなこんなで、苦い経験だったので触りたくなかったのです。(なんか今見たら
+issueが飛んできていますね・・・そろそろ頑張り直すかも。)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Recursive-Macroexpansion has the completely different expansion algorithm than
+those of Common Lisp’s macro expansion. CL is based on macroexpand-1 and
+macroexpand while Recursive-Macroexpansion is based on rmacroexpand only. However,
+normal macros are transparent to macroexpand, so mixing normal macro and recursive
+macro is completely ok.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Recursive-Macroexpansion は普通の Common Lisp の展開とは別のアルゴリズムで
+式を展開します。 CL での展開は macroexpand-1 と
+macroexpand でできていますが、 Recursive-Macroexpansion は &lt;code&gt;rmacroexpand&lt;/code&gt; だけで出
+来ています。 &lt;code&gt;rmacroexpand&lt;/code&gt; は、対応する recursive-macro がなかった場合
+普通の &lt;code&gt;defmacro&lt;/code&gt; で定義されたマクロを探し、普通の &lt;code&gt;macroexpand-1&lt;/code&gt; で展開するので、
+&lt;code&gt;recursive-macro&lt;/code&gt; と普通のマクロを混ぜることは全く問題ありません。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;BIG NOTE&lt;/strong&gt; : This is my FIRST library written in controversial CL21. Thanks to
+Fukamachi !  The reason I chose CL21 is simply because I was interested in it and
+want to try it. However, adoption of &lt;em&gt;CLtL2 Sec.8 environment&lt;/em&gt; was also a key
+factor, because it uses &lt;code&gt;augment-environment&lt;/code&gt; many times.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;これはまあCL21で作った最初のライブラリです。使いながらCL21のバグフィック
+スもいくつかしました。 深町さんGJ!
+CL21を使った理由は、まあ使ってみて感触を試してみたかったというのもありますが、
+CLtL2の &lt;code&gt;&amp;amp;environment&lt;/code&gt; 構造体関連の関数がCL21ではデフォルトで入っているというのが
+鍵でした。実装は &lt;code&gt;augment-environment&lt;/code&gt; に多分に依存しています。(これをしてしまうと、
+実装依存の &lt;code&gt;macroexpand-all&lt;/code&gt; とどう違うんだと言われてしまうかもしれませんが・・・)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/guicho271828/recursive-macroexpansion&quot;&gt;https://github.com/guicho271828/recursive-macroexpansion&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lisp on OpenCL は少しずつやってますがあんまり進展はないので、次回はマクロの話をまた
+英語併記でやります。&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Project-started-lisp-on-opencl.html"/> <title>Project started: lisp on opencl</title> <published>2014-03-22 11:35:03 +0900</published> <updated>2014-03-22 11:35:03 +0900</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;Radeon HD5770と nVidia TESLA c1060 およびニュー電源を手に入れたので、
+この一週間は、
+C言語のサブセットであるOpenCLにコンパイルされるlisp拡張を制作する予定。
+まあ、肝心のビデオカードがまだ動いていないんだけど・・・&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;なぜかというと、GPU用の補助電源ケーブルの手持ちがないから。
+やろうと思えば自作もできるんだけど、さすがにこれぐらい買おうかなと思う・・・&lt;/p&gt;
+
+&lt;p&gt;なお、試しに電源を入れてみた(補助電源無し)ときには、おそらくきちんと動いていない
+からかものすごいファンがうるさかった。&lt;/p&gt;
+
+&lt;p&gt;{{ &#039;gallery&#039; | image_list }}&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/がlambdaの省略として使いにくいという話.html"/> <title>＾がlambdaの省略として使いにくいという話</title> <published>2014-03-01 10:34</published> <updated>2014-03-01 10:34</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;お久しぶりです、浅井です。&lt;/p&gt;
+
+&lt;p&gt;論文やばかったり人の論文読んだりgithubで議論したりする毎日ですが、
+表題の通りの議題について。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;じつは、自分 &lt;strong&gt;括弧&lt;/strong&gt; を書くのがshiftキーのせいで結構苦痛に感じています。
+ええ、lisperなのにです。&lt;/p&gt;
+
+&lt;p&gt;いや、括弧は好きなんです。好きなんですよ?大好きです。
+でも、僕は手がかなり小さい。
+&amp;lt;Right-shift + 8&amp;gt; は人差し指と小指を最大限伸ばして押すことになります。
+そう、さながらメロイック・サインみたいなカンジで入力しています。&lt;/p&gt;
+
+&lt;p&gt;それでですね、二年くらい前、 &lt;em&gt;数字キーのそのシフトキーのXmodmapを入れ替えてみた&lt;/em&gt;
+ことがあったんですよ。結局慣れずにもとに戻してしまいましたが。&lt;/p&gt;
+
+&lt;p&gt;(通常)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;keycode  10 = 1 exclam 1 exclam
+keycode  11 = 2 quotedbl 2 quotedbl
+keycode  12 = 3 numbersign 3 numbersign
+keycode  13 = 4 dollar 4 dollar
+keycode  14 = 5 percent 5 percent
+keycode  15 = 6 ampersand 6 ampersand
+keycode  16 = 7 apostrophe 7 apostrophe
+keycode  17 = 8 parenleft 8 parenleft
+keycode  18 = 9 parenright 9 parenright
+keycode  19 = 0 asciitilde 0 asciitilde
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(入れ替え)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;keycode  10 = exclam 1 exclam 1
+keycode  11 = quotedbl 2 quotedbl 2
+keycode  12 = numbersign 3 numbersign 3
+keycode  13 = dollar 4 dollar 4
+keycode  14 = percent 5 percent 5
+keycode  15 = ampersand 6 ampersand 6
+keycode  16 = apostrophe 7 apostrophe 7
+keycode  17 = parenleft 8 parenleft 8
+keycode  18 = parenright 9 parenright 9
+keycode  19 = asciitilde 0 asciitilde 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;だって、lisp書く最中で数字ってそんなに使いませんよ。なにに使うんですか。
+精々使っても 0 か 1 しか無いと思うんですよ。7とか8とか何時使うんですか。
+だったら数字のキーだけ常にCapsLock状態のほうがいいじゃないですか。
+括弧に殉ずるべきです。 &lt;em&gt;すべてはparenthesesのもとに！&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;これと同じ考え方をやれば、(まあ自分のキーボードでは &lt;code&gt;^&lt;/code&gt; に shift は要りませんが)
+&lt;code&gt;^&lt;/code&gt; をshift無しで入力することも簡単だと思います。
+あるいは、 &lt;code&gt;cl21-mode&lt;/code&gt; みたいなマイナーモード作るとか。&lt;/p&gt;
+
+&lt;p&gt;というわけです。括弧のためにキーアサインを変更する・・・。
+だれか真似してみたい人はいませんか。&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/紹介-ライブラリ-Inner-conditional.html"/> <title>紹介: ライブラリ Inner-conditional</title> <published>2013-05-06 20:41</published> <updated>2013-05-06 20:41</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/guicho271828/inner-conditional&quot; &gt;inner-conditional&lt;/a&gt; の紹介をします。&lt;/p&gt;
+
+&lt;h1&gt;Q.なにができるの?&lt;/h1&gt;
+
+&lt;p&gt;A. ループ(など)の中の条件判定を、内側に書いたままで外側に出せます。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;code&quot;&gt;&lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;with-inner&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body&lt;/span&gt;)&lt;/span&gt;
+    &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;iter &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;for i from 0 to 5&lt;/span&gt;)&lt;/span&gt;
+          &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;print i&lt;/span&gt;)&lt;/span&gt;
+          &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;inner &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body&lt;/span&gt;)&lt;/span&gt;
+            &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;if&lt;/span&gt;&lt;/i&gt; flag
+                &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;princ &lt;span class=&quot;string&quot;&gt;&quot;loop on&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+                &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;princ &lt;span class=&quot;string&quot;&gt;&quot;loop off&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と書くと、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;code&quot;&gt;&lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;IF&lt;/span&gt;&lt;/i&gt; FLAG
+    &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;WITH-INNER&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;BODY&lt;/span&gt;)&lt;/span&gt;
+      &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;ITER
+        &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;FOR I FROM 0 TO 5&lt;/span&gt;)&lt;/span&gt;
+        &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;PRINT I&lt;/span&gt;)&lt;/span&gt;
+        &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;PROGN&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;PRINC &lt;span class=&quot;string&quot;&gt;&quot;loop on&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+    &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;WITH-INNER&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;BODY&lt;/span&gt;)&lt;/span&gt;
+      &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;ITER
+        &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;FOR I FROM 0 TO 5&lt;/span&gt;)&lt;/span&gt;
+        &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;PRINT I&lt;/span&gt;)&lt;/span&gt;
+        &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;PROGN&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;PRINC &lt;span class=&quot;string&quot;&gt;&quot;loop off&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;になって、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;code&quot;&gt;&lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;IF&lt;/span&gt;&lt;/i&gt; FLAG
+    &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;PROGN&lt;/span&gt;&lt;/i&gt;
+     &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;ITER
+       &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;FOR I FROM 0 TO 5&lt;/span&gt;)&lt;/span&gt;
+       &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;PRINT I&lt;/span&gt;)&lt;/span&gt;
+       &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;PROGN&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;PRINC &lt;span class=&quot;string&quot;&gt;&quot;loop on&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+    &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;PROGN&lt;/span&gt;&lt;/i&gt;
+     &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;ITER
+       &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;FOR I FROM 0 TO 5&lt;/span&gt;)&lt;/span&gt;
+       &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;PRINT I&lt;/span&gt;)&lt;/span&gt;
+       &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;PROGN&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;PRINC &lt;span class=&quot;string&quot;&gt;&quot;loop off&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;になります。うふふ、いいでしょ。キモイ？&lt;/p&gt;
+
+&lt;p&gt;この種のループ最適化というと、もとから全て行なってくれるような、とって
+も優れた処理系もあるかもしれませんが、なにせ実際に動いているのかどうか
+わかりません。(C言語とかって、賢いコンパイラはこういうのが全部デフォルト
+で付いているんですかね？) sbclでテストをした結果、 &lt;strong&gt;たしかに&lt;/strong&gt; &lt;a href=&quot;https://github.com/guicho271828/inner-conditional/blob/master/opt-results.org&quot; &gt;条件判定
+の分だけ早くなっていることが確認出来ました。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;条件判定のタイミングは &lt;code&gt;with-inner&lt;/code&gt; の部分ですので、 &lt;code&gt;with-inner&lt;/code&gt; をど
+こに置くかで判定のタイミングを適切に設定できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;code&quot;&gt;&lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;with-inner&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body&lt;/span&gt;)&lt;/span&gt;
+  &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;iter &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;for i from 0 to 5&lt;/span&gt;)&lt;/span&gt;
+        &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;with-inner&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body2&lt;/span&gt;)&lt;/span&gt;
+          &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;iter &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;for j from 0 to 5&lt;/span&gt;)&lt;/span&gt;
+                &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;format t &lt;span class=&quot;string&quot;&gt;&quot;~%i: ~a j: ~a&quot;&lt;/span&gt; i j&lt;/span&gt;)&lt;/span&gt;
+                &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;inner &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body2&lt;/span&gt;)&lt;/span&gt;
+                  &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;if&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;evenp i&lt;/span&gt;)&lt;/span&gt;
+                      &lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body2 &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;format t &lt;span class=&quot;string&quot;&gt;&quot;  i is even&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+                      &lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body2 &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;format t &lt;span class=&quot;string&quot;&gt;&quot;  i is odd&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+                &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;inner-if body flag
+                          &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;format t &lt;span class=&quot;string&quot;&gt;&quot;  loop on&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+                          &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;format t &lt;span class=&quot;string&quot;&gt;&quot;  loop off&quot;&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この例では、 &lt;code&gt;body&lt;/code&gt; レベルでの条件判定は一番上で、一方 &lt;code&gt;body2&lt;/code&gt; レベルの
+条件判定はループの二段目で行えます。 &lt;code&gt;inner&lt;/code&gt; の方、すなわり条件判定の内
+容を実際に書いている方で、そのレベルを指定できます。 &lt;code&gt;(inner-if body
+...)&lt;/code&gt; というのは構文糖で、 &lt;code&gt;(inner (body) (if ... (body ...)))&lt;/code&gt; に展開
+されるマクロです。ほかにも数種類あります。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;inner&lt;/code&gt; 内で使えるのは &lt;code&gt;if&lt;/code&gt; だけじゃありません。 &lt;code&gt;cond&lt;/code&gt; でも、 &lt;code&gt;case&lt;/code&gt;
+でも、オレオレマクロでもなんでも大丈夫です。特殊なマクロで制御構造を登
+録する必要はありません。必要なのはこれだけ、すなわち、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;継続であるかのように body を呼ぶこと
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;です。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;code&quot;&gt;&lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;with-inner&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body&lt;/span&gt;)&lt;/span&gt;
+  &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;iter
+    &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;for i from 0 to 5&lt;/span&gt;)&lt;/span&gt;
+    &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;inner &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body&lt;/span&gt;)&lt;/span&gt;
+      &lt;span class=&quot;paren4&quot;&gt;(&lt;span class=&quot;code&quot;&gt;case &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;progn&lt;/span&gt;&lt;/i&gt; &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;incf count&lt;/span&gt;)&lt;/span&gt;
+                   &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;mod arg 3&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+        &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;0 &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body &lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;format t &lt;span class=&quot;string&quot;&gt;&quot;divided. i*3 =~a~%&quot;&lt;/span&gt;
+                         &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;* i 3&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+                 &lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;format t &lt;span class=&quot;string&quot;&gt;&quot;divided. i*3 =~a~%&quot;&lt;/span&gt;
+                         &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;* i 3&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+        &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;1 &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body &lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;format t &lt;span class=&quot;string&quot;&gt;&quot;modulo 1. i*3 + 1 =~a~%&quot;&lt;/span&gt;
+                         &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;+ 1 &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;* i 3&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+        &lt;span class=&quot;paren5&quot;&gt;(&lt;span class=&quot;code&quot;&gt;2 &lt;span class=&quot;paren6&quot;&gt;(&lt;span class=&quot;code&quot;&gt;body &lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;format t &lt;span class=&quot;string&quot;&gt;&quot;modulo 2. i*3 + 2 =~a~%&quot;&lt;/span&gt;
+                         &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;+ 2 &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;* i 3&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;だってほら、全然違いますけど、内側と外側がひっくり返るじゃないですか。
+プログラムは実際には &lt;strong&gt;一番最初に&lt;/strong&gt; 条件分岐をして、そして &lt;code&gt;inner&lt;/code&gt; の中身
+が &lt;code&gt;body&lt;/code&gt; の引数を代入した状態で実行されるんです。似てませんか？ &lt;strong&gt;継続
+に！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;続きはまた今度。このライブラリのもうひとつのいいところ、 あなたのライブ
+ラリに、 &lt;strong&gt;条件分岐を隠したまま最適化できる能力&lt;/strong&gt; を与えられる点について
+お話しします。&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Common-Lisp-で-Code-Walker-を実装するなら-その②.html"/> <title>Common Lisp で Code Walker を実装するなら その②</title> <published>2013-05-06 15:26</published> <updated>2013-05-06 15:26</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;前回の続き。状態を持つmacroletを書くにはどうすればいいのか！？
+これが答えだ！&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1&gt;回答: Compile-time で restart-bind&lt;/h1&gt;
+
+&lt;p&gt;{% include_code サンプルコード lang:cl walk-tree.lisp %}&lt;/p&gt;
+
+&lt;p&gt;ね、面白いでしょ？ANSI Hyperspecにある &lt;code&gt;*macroexpand-hook*&lt;/code&gt; をうまく使っ
+てみました。 &lt;code&gt;my-macro-start&lt;/code&gt; が変な感じになっているのは、ここで書いた
+構造が入れ子になってる可能性があるので、スタックフレームをエミュレート
+しているんです。 &lt;strong&gt;ん、え、スタック？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Schemerな人は言いたいことがすぐにわかることでしょう。ANSIの設計の何が悪
+いって、 &lt;code&gt;defmacro&lt;/code&gt; が &lt;strong&gt;継続を引数に取ってくれない&lt;/strong&gt; ことなんですよ。だ
+から、外側のマクロを展開した時に、内側のマクロ展開を行うときのレキシカ
+ル環境を操作できない。それだから中途半端な code-walker しか &lt;em&gt;簡単には&lt;/em&gt;
+実装できないわけです。&lt;/p&gt;
+
+&lt;p&gt;うーん、えーと、もう2,3個思いついたはずなんですけど、思いつかなかった
+ので、一つです。なにか他に案がある人はtwitterかgithub経由で教えてくだ
+さい(^^)&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Common-Lisp-で-Code-Walker-を実装するなら.html"/> <title>Common Lisp で Code Walker を実装するなら</title> <published>2013-05-05 22:01</published> <updated>2013-05-05 22:01</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;Common Lispを使っていると、みんな一度はマクロでDSLを実装したくなります
+よね。みなさんどうしてるでしょう。例えば、自分の作ったマクロ
+&lt;code&gt;my-macro&lt;/code&gt; の中では、特定のS式、たとえば=my-clause= に特殊な意味を持つ
+節としての役割を与えたい時。マクロは引数のS式を好きに扱えるので、なんで
+もありです。だから、例えば。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;pre&gt;&lt;code&gt;
+(defun walk-tree (fn tree)
+  (funcall fn tree
+           (lambda (branch)
+             (mapcar (lambda (branch)
+                       (walk-tree fn branch))
+                     branch))))
+
+(defun precompile-1-layer (sym fn form)
+  (walk-tree
+   (lambda (subform cont)
+     (if (and (consp subform)
+              (equalp sym (car subform)))
+         (apply fn (cdr subform))
+         (if (consp subform)
+             (funcall cont subform)
+             subform)))
+   form))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;みたいなのを定義して、該当シンボルを手動で検知して &lt;code&gt;macroexpand&lt;/code&gt; の真似
+をする、といった手を使うことができちゃいます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+(defmacro my-macro (&amp;body body)
+  `(progn
+     ,@(precompile-1-layer
+        &#039;my-clause
+        (lambda (&amp;body body)
+          (progn (print :hi!)
+                 ,@body))
+        body)))
+
+(my-macro
+ (iter (for i below 5)
+       (print i)
+       (my-clause
+        (print :stupid!))))
+
+;; macroexpansion result
+
+(progn
+  (iter (for i below 5)
+        (print i)
+        (progn
+          (print :hi!)
+          (print :stupid!))))  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;いやまあ、ここで問題になるのが、 &lt;code&gt;macrolet&lt;/code&gt; で指定した内容が全然反映され
+ないという事ですね。一言で言えば、頭悪い。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+(my-macro
+ (macrolet ((my-clause (&amp;body body)
+              (subst :im-not-stupid! :stupid! body)))
+   (iter (for i below 5)
+         (print i)
+         (my-clause
+          (print :stupid!)))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;
+(progn
+ (macrolet ((my-clause (&amp;body body)
+              (subst :im-not-stupid! :stupid! body)))
+  (iter (for i below 5)
+        (print i)
+        (progn
+          (print :hi!)
+          (print :stupid!)))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;my-clauseをバイパスして展開してしまっているので、内側のmy-clauseが反映
+されず、 &lt;code&gt;:stupid!&lt;/code&gt; が &lt;code&gt;:im-not-stupid!&lt;/code&gt; に変換されずに残っている。この問
+題が、&lt;a href=&quot;http://m2ym.github.io/blog/2012/04/28/eval-in-macros/&quot; &gt;m2ymさんも言っている&lt;/a&gt; &lt;strong&gt;マクロ内でevalするな&lt;/strong&gt; 問題です。&lt;/p&gt;
+
+&lt;p&gt;でも、evalしないって辛いです。code walkをするなと言っているのと同様。
+じゃあどうすればいいのか。&lt;/p&gt;
+
+&lt;h1&gt;全部Macroletに展開する&lt;/h1&gt;
+
+&lt;p&gt;これは僕が &lt;a href=&quot;https://github.com/guicho271828/inner-conditional&quot; &gt;inner-conditional&lt;/a&gt; ではじめに取った手法です。
+&lt;code&gt;macrolet&lt;/code&gt; をどんどんネストさせるわけです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+(defmacro my-macro (&amp;body body)
+  `(macrolet ((my-clause (&amp;body body)
+                `(progn (print :hi!)
+                        ,@body)))
+     ,@body))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで今回のコードでは当面の目標は達成されます。でも、問題が・・・。な
+にが問題かというと、コンパイル時に変数を触ることができないということ。
+例えば上のコードで、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;一回目は〇〇に展開し、二回目は☓☓に展開したい。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とか、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;i回目にはiを用いて … に展開したい。その指定は実行時ではダメで、
+コンパイル時に定数として挿入したい。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とかいう需要があるときにどうするか。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;macrolet&lt;/code&gt; はスペシャルフォームなので、そのマクロ定義だけをletで囲む
+なんてことはできません。出来れば嬉しいんだけれどねえ…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+(macrolet ((let ((i 0))
+             (my-clause (&amp;body body)
+                (incf i)
+                `(progn (print ,i)
+                        ,@body))))
+  (do-something))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ではどうするか。例を示そうと思ったんですが、例を書くだけでも骨が折れる
+ようなコードだったので、続きは次の記事で。&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/オレオレlisp入門.html"/> <title>オレオレlisp入門</title> <published>2013-03-28 18:03</published> <updated>2013-03-28 18:03</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;Lispでプログラミングをはじめるには何をすればいいのか、まさに直接的な
+チュートリアルをつくろうと思い立ち、この記事を書き始めました。&lt;/p&gt;
+
+&lt;p&gt;古いし読むに耐えない記事なので削除! (2016/3/30)&lt;/p&gt;
 </content> </entry> </feed>

@@ -12,26 +12,47 @@
   })();
 
 </script> </head> <body> <div class="navigation"> <span class="sitenav"> <a href="/">CL-USER&gt; (start-up (the engine *bp-ze*))</a> </span> <span class="sitenav"> <a href="/profile/">Profile</a> </span><span class="sitenav"> <a href="/publications/">Publications</a> </span><span class="sitenav"> <a href="http://twitter.com/guicho271828">Twitter</a> </span><span class="sitenav"> <a href="http://github.com/guicho271828">Github</a> </span><span class="sitenav"> <a href="https://www.linkedin.com/in/masataro-asai-158a0638/">LinkedIn</a> </span> </div> <div id="content"> <div class="article-meta">
-<h1 class="title">2017-11-06</h1>
+<h1 class="title">second commit</h1>
 <div class="tags">
-Tagged as <a href="/tag/lisp.html">lisp</a> </div>
+Tagged as <a href="/tag/old-blog.html">old-blog</a> </div>
 <div class="date">
-Written on 2017-11-06 16:04:54 </div>
+Written on 2013-03-06 23:03 </div>
 </div>
 <div class="article-content">
-<!-- **** your post here (remove this line) **** -->
+<p>早くmarkdownからorgに移行しないとな。</p>
 
-<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
-
-<p>I just migrated from Jekyll to Coleslaw.</p>
+<p>まだいろいろと機能の確認中。ある程度自由に書ける&amp;設定をいじれるようになっ
+て、環境が整ったら、いよいよ書かなくてはいけないことを書こう。</p>
 
 <!--more-->
 
-<p>This was not the best experinece, but was fun anyways.</p>
+<h1>見出し</h1>
+
+<p>見出しが # だと全部H1になってしまって問題だな。
+どうにかできないのかこれ。ファイル名からメインのタイトルを取るんだから、
+本文中の # はH2にするべきだろ。スタイルシートでやっても全部ごちゃごちゃ
+になっちゃうだろうし….</p>
+
+<p>とりあえず、firebugでjekyllがどんなソースを吐いてるのか監視しながらやっ
+てみる。すると、ファイル名から来たタイトルの方はentity-titleというクラ
+スになってることはわかった。どうやらスタイルシートでごちゃごちゃになる
+わけではなさそうだ。</p>
+
+<h2>テーマ編集</h2>
+
+<p>テーマの編集のために色々調べてるけど… sassは初めて使うから慣れてない。
+前使ったのはなんだっけ？たしかsassではなくて別のスタイルシート言語だっ
+た覚えがある。</p>
+
+<h2>rakeのバージョン</h2>
+
+<p>rakeのバージョンが <em>新しすぎる</em> せいでなんか毎回 bundle exec rake ... とし
+なくてはいけなくなってる。これ、このフォルダで指定できるようにできない
+のか。</p>
  </div>
 <div class="relative-nav">
-<a href="/posts/Component-Abstraction-Planner-Made-Available.html">Previous</a><br>
-
+<a href="/posts/first-commit.html">Previous</a><br>
+<a href="/posts/third-commit.html">Next</a><br>
 </div>
  </div> <div id="disqus_thread"></div>
      <script type="text/javascript">

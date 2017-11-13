@@ -1,9 +1,229 @@
 <?xml version="1.0"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link>https://guicho271828.github.io</link> <atom:link href="https://guicho271828.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Sun, 12 Nov 2017 18:30:17 +0900</pubDate> <item> <title>2017-11-06</title> <link>https://guicho271828.github.io/posts/2017-11-06.html</link> <pubDate>2017-11-06 16:04:54</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/2017-11-06.html</guid> <category><![CDATA[ lisp ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link>https://guicho271828.github.io</link> <atom:link href="https://guicho271828.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Mon, 13 Nov 2017 12:21:47 +0900</pubDate> <item> <title>2017-11-06</title> <link>https://guicho271828.github.io/posts/2017-11-06.html</link> <pubDate>2017-11-06 16:04:54</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/2017-11-06.html</guid> <category><![CDATA[ lisp ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
 
 <!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
 
-<p>I just migrated from Jekyll to Coleslaw. This was not the best experinece, but was fun anyways.</p>
+<p>I just migrated from Jekyll to Coleslaw.</p>
 
 <!--more-->
+
+<p>This was not the best experinece, but was fun anyways.</p>
+ ]]></description> </item><item> <title>Component Abstraction Planner Made Available</title> <link>https://guicho271828.github.io/posts/Component-Abstraction-Planner-Made-Available.html</link> <pubDate>2015-01-31 09:53:24 +0900</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/Component-Abstraction-Planner-Made-Available.html</guid> <category><![CDATA[ old-blog ]]></category><category><![CDATA[ research ]]></category> <description><![CDATA[ <p>Component Abstraction Planner, latest work of mine, has been made publicly
+available at <a href="https://github.com/guicho271828/CAP">https://github.com/guicho271828/CAP</a> . Installation guide is
+provided in the link.</p>
+
+<p>For ICAPS15 paper, see the Publications page.</p>
+ ]]></description> </item><item> <title>Recursive Macroexpansion</title> <link>https://guicho271828.github.io/posts/Recursive-Macroexpansion.html</link> <pubDate>2014-05-04 15:56:33 +0900</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/Recursive-Macroexpansion.html</guid> <category><![CDATA[ old-blog ]]></category><category><![CDATA[ lisp ]]></category> <description><![CDATA[ <blockquote>
+<p>Yesterday, as a holiday coding, I made yet another macro-expansion system which
+allows for easier compile-time error handling, which I previously described in
+<a href="http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f" >this post</a>.</p>
+</blockquote>
+
+<p>昨日、ゴールデンウィークの遊びコーディングとして、
+<a href="http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f" >前々から言っていた</a> ものに相当する、
+リスタートやコンディションと密に連携できるマクロ展開システムを作りました。</p>
+
+<!--more-->
+
+<blockquote>
+<p>Some people may already know that this idea is not so new at all.
+In 
+<a href="http://ja.reddit.com/r/lisp/comments/1xyux9/macro_system_common_lisp_is_still_hard_to_satisfy/cffz33l" >this post</a>
+, nsiivola said that we can alternatively use an implementation-specific
+<code>macroexpand-all</code>. Also, <code>macroexpand-dammit</code> tries to give the similar feature
+within ANSI CL.</p>
+</blockquote>
+
+<p>色々とすでに言われているように実は、
+このライブラリ自体にそんなに新規性はありません。
+まず、同じことを達成するためには、
+<a href="http://ja.reddit.com/r/lisp/comments/1xyux9/macro_system_common_lisp_is_still_hard_to_satisfy/cffz33l" >nsiivola さんの言った</a>ように、
+マクロの中で実装依存の <code>macroexpand-all</code> を使うという手がありました。
+他にも、ANSI CL の中だけで似た機能を作ろうと頑張っている、
+ <code>macroexpand-dammit</code> を使うという手もありました。</p>
+
+<blockquote>
+<p>So why I made it? The first reason is that I didn't want to use the implementation
+specific feature. The second is that, I didn't want to use <code>macroexpand-dammit</code>
+which I have a bitter experience with it.
+When I once saw it, it was not maintained, the implementation was tricky,
+it has a bug, lacks test codes, and was also depended by some other famous library SXML, which I have no idea
+about and also lacks test codes.</p>
+</blockquote>
+
+<p>ではなぜ作ったのか?
+第一に、実装依存の要素を使うというのはあまり好きではありませんでした。
+第二に、これは完全に個人的な理由なんですが、
+<code>macroexpand-dammit</code> には苦い経験があるのであまり使いたくなかったというわけです。
+このライブラリ、まず実装がトリッキー、バグが在る、テストコードがない、という問題だ
+らけのライブラリでした。</p>
+
+<blockquote>
+<p>I once tried to maintain it on github and have my repo followed in quicklisp thanks to
+zach, but my change made some errors in those dependent libraries, and
+honestly I failed. I neglected. Currently quicklisp follows the older version. 
+And I lack my interest now. (However, now I see some issues
+message from someone, so maybe I'll try again)</p>
+</blockquote>
+
+<p>一度、これを直してgithub上でメンテナっぽく振る舞おうと思い、quicklispにも申請したの
+ですが、
+これを治そうとすると、実は有名なライブラリSXMLがこれに依存しているらしく、そこのコー
+ドを壊してしまうそうです。
+で、さらに悪いことに、「メンテナになるよー」と一旦言ったにも関わらず
+個人的に時間が取れなくて放置してしまったため、
+zachさんには「メンテ出来ないならメンテナになろうとするな」と。正論ですね。すみませ
+ん。そんなこんなで、苦い経験だったので触りたくなかったのです。(なんか今見たら
+issueが飛んできていますね・・・そろそろ頑張り直すかも。)</p>
+
+<blockquote>
+<p>Recursive-Macroexpansion has the completely different expansion algorithm than
+those of Common Lisp’s macro expansion. CL is based on macroexpand-1 and
+macroexpand while Recursive-Macroexpansion is based on rmacroexpand only. However,
+normal macros are transparent to macroexpand, so mixing normal macro and recursive
+macro is completely ok.</p>
+</blockquote>
+
+<p>Recursive-Macroexpansion は普通の Common Lisp の展開とは別のアルゴリズムで
+式を展開します。 CL での展開は macroexpand-1 と
+macroexpand でできていますが、 Recursive-Macroexpansion は <code>rmacroexpand</code> だけで出
+来ています。 <code>rmacroexpand</code> は、対応する recursive-macro がなかった場合
+普通の <code>defmacro</code> で定義されたマクロを探し、普通の <code>macroexpand-1</code> で展開するので、
+<code>recursive-macro</code> と普通のマクロを混ぜることは全く問題ありません。</p>
+
+<blockquote>
+<p><strong>BIG NOTE</strong> : This is my FIRST library written in controversial CL21. Thanks to
+Fukamachi !  The reason I chose CL21 is simply because I was interested in it and
+want to try it. However, adoption of <em>CLtL2 Sec.8 environment</em> was also a key
+factor, because it uses <code>augment-environment</code> many times.</p>
+</blockquote>
+
+<p>これはまあCL21で作った最初のライブラリです。使いながらCL21のバグフィック
+スもいくつかしました。 深町さんGJ!
+CL21を使った理由は、まあ使ってみて感触を試してみたかったというのもありますが、
+CLtL2の <code>&amp;environment</code> 構造体関連の関数がCL21ではデフォルトで入っているというのが
+鍵でした。実装は <code>augment-environment</code> に多分に依存しています。(これをしてしまうと、
+実装依存の <code>macroexpand-all</code> とどう違うんだと言われてしまうかもしれませんが・・・)</p>
+
+<p><a href="https://github.com/guicho271828/recursive-macroexpansion">https://github.com/guicho271828/recursive-macroexpansion</a></p>
+
+<p>Lisp on OpenCL は少しずつやってますがあんまり進展はないので、次回はマクロの話をまた
+英語併記でやります。</p>
+ ]]></description> </item><item> <title>Project started: lisp on opencl</title> <link>https://guicho271828.github.io/posts/Project-started-lisp-on-opencl.html</link> <pubDate>2014-03-22 11:35:03 +0900</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/Project-started-lisp-on-opencl.html</guid> <category><![CDATA[ old-blog ]]></category><category><![CDATA[ lisp ]]></category> <description><![CDATA[ <p>Radeon HD5770と nVidia TESLA c1060 およびニュー電源を手に入れたので、
+この一週間は、
+C言語のサブセットであるOpenCLにコンパイルされるlisp拡張を制作する予定。
+まあ、肝心のビデオカードがまだ動いていないんだけど・・・</p>
+
+<!--more-->
+
+<p>なぜかというと、GPU用の補助電源ケーブルの手持ちがないから。
+やろうと思えば自作もできるんだけど、さすがにこれぐらい買おうかなと思う・・・</p>
+
+<p>なお、試しに電源を入れてみた(補助電源無し)ときには、おそらくきちんと動いていない
+からかものすごいファンがうるさかった。</p>
+
+<p>{{ 'gallery' | image_list }}</p>
+ ]]></description> </item><item> <title>スタイルをもとに戻した</title> <link>https://guicho271828.github.io/posts/スタイルをもとに戻した.html</link> <pubDate>2014-03-15 21:40:19 +0900</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/スタイルをもとに戻した.html</guid> <category><![CDATA[ old-blog ]]></category> <description><![CDATA[ <p>octopressアップデート後に昔に戻ってしまったスタイルを
+一部戻しました。
+なんでoctopressデフォルトの文字はこんなに文字がでかいのかね。</p>
+
+<!--more-->
+
+<p>TODO: タイトルバーの背景をカーボン調にする。</p>
+
+<pre><code><span class="code">
+<span class="paren1">(<span class="code"><i><span class="symbol">defun</span></i> myfunc <span class="paren2">(<span class="code">arg &amp;optional <span class="paren3">(<span class="code">option <span class="keyword">:keyword</span></span>)</span></span>)</span>
+  <span class="paren2">(<span class="code">declare <span class="paren3">(<span class="code">ignore option</span>)</span></span>)</span>
+  <span class="paren2">(<span class="code">print arg</span>)</span></span>)</span>
+
+</span></code></pre>
+ ]]></description> </item><item> <title>gallery post</title> <link>https://guicho271828.github.io/posts/gallery-post.html</link> <pubDate>2014-03-08 00:29</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/gallery-post.html</guid> <category><![CDATA[ old-blog ]]></category> <description><![CDATA[ <p>ギャラリー機能のテスト。
+<a href="https://github.com/yortz/octopress_gallery">https://github.com/yortz/octopress_gallery</a></p>
+
+<p>{{ 'gallery' | image_list }}</p>
+
+<p>見た目はあんましよくないね。</p>
+ ]]></description> </item><item> <title>＾がlambdaの省略として使いにくいという話</title> <link>https://guicho271828.github.io/posts/がlambdaの省略として使いにくいという話.html</link> <pubDate>2014-03-01 10:34</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/がlambdaの省略として使いにくいという話.html</guid> <category><![CDATA[ old-blog ]]></category><category><![CDATA[ lisp ]]></category> <description><![CDATA[ <p>お久しぶりです、浅井です。</p>
+
+<p>論文やばかったり人の論文読んだりgithubで議論したりする毎日ですが、
+表題の通りの議題について。</p>
+
+<!--more-->
+
+<p>じつは、自分 <strong>括弧</strong> を書くのがshiftキーのせいで結構苦痛に感じています。
+ええ、lisperなのにです。</p>
+
+<p>いや、括弧は好きなんです。好きなんですよ?大好きです。
+でも、僕は手がかなり小さい。
+&lt;Right-shift + 8&gt; は人差し指と小指を最大限伸ばして押すことになります。
+そう、さながらメロイック・サインみたいなカンジで入力しています。</p>
+
+<p>それでですね、二年くらい前、 <em>数字キーのそのシフトキーのXmodmapを入れ替えてみた</em>
+ことがあったんですよ。結局慣れずにもとに戻してしまいましたが。</p>
+
+<p>(通常)</p>
+
+<pre><code>keycode  10 = 1 exclam 1 exclam
+keycode  11 = 2 quotedbl 2 quotedbl
+keycode  12 = 3 numbersign 3 numbersign
+keycode  13 = 4 dollar 4 dollar
+keycode  14 = 5 percent 5 percent
+keycode  15 = 6 ampersand 6 ampersand
+keycode  16 = 7 apostrophe 7 apostrophe
+keycode  17 = 8 parenleft 8 parenleft
+keycode  18 = 9 parenright 9 parenright
+keycode  19 = 0 asciitilde 0 asciitilde
+</code></pre>
+
+<p>(入れ替え)</p>
+
+<pre><code>keycode  10 = exclam 1 exclam 1
+keycode  11 = quotedbl 2 quotedbl 2
+keycode  12 = numbersign 3 numbersign 3
+keycode  13 = dollar 4 dollar 4
+keycode  14 = percent 5 percent 5
+keycode  15 = ampersand 6 ampersand 6
+keycode  16 = apostrophe 7 apostrophe 7
+keycode  17 = parenleft 8 parenleft 8
+keycode  18 = parenright 9 parenright 9
+keycode  19 = asciitilde 0 asciitilde 0
+</code></pre>
+
+<p>だって、lisp書く最中で数字ってそんなに使いませんよ。なにに使うんですか。
+精々使っても 0 か 1 しか無いと思うんですよ。7とか8とか何時使うんですか。
+だったら数字のキーだけ常にCapsLock状態のほうがいいじゃないですか。
+括弧に殉ずるべきです。 <em>すべてはparenthesesのもとに！</em></p>
+
+<p>これと同じ考え方をやれば、(まあ自分のキーボードでは <code>^</code> に shift は要りませんが)
+<code>^</code> をshift無しで入力することも簡単だと思います。
+あるいは、 <code>cl21-mode</code> みたいなマイナーモード作るとか。</p>
+
+<p>というわけです。括弧のためにキーアサインを変更する・・・。
+だれか真似してみたい人はいませんか。</p>
+ ]]></description> </item><item> <title>CV page 作成中</title> <link>https://guicho271828.github.io/posts/CV-page-作成中.html</link> <pubDate>2014-01-17 00:44</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/CV-page-作成中.html</guid> <category><![CDATA[ old-blog ]]></category> <description><![CDATA[ <p>せっかく業績ができたんだから、
+人の真似をして、自分のCVページを作ってみようと思う。</p>
+
+<!--more-->
+
+<p>何がいるかな。
+<a href="http://yoshiori.github.io/" >ここ</a>を見てみよう。
+経歴、経験、interest、publicationsでしょ・・・
+職歴(アルバイトしか無いな)・・・</p>
+
+<p>一方<a href="http://metahack.org/" >指導教員の自己紹介ページ</a> 。うーん、どうやっても勝てん。</p>
+
+<p>まだ時期尚早かなという気もしてきた。
+うーん・・・どうしようかな。
+せめてICAPS workshop 2014 終わってからにするか？</p>
+ ]]></description> </item><item> <title>テスト2</title> <link>https://guicho271828.github.io/posts/テスト2.html</link> <pubDate>2014-01-05 13:50</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/テスト2.html</guid> <category><![CDATA[ old-blog ]]></category> <description><![CDATA[ <p>テスト2です。
+octopress, なんかおかしい？</p>
+ ]]></description> </item><item> <title>ノートパソコンから投稿</title> <link>https://guicho271828.github.io/posts/ノートパソコンから投稿.html</link> <pubDate>2014-01-05 12:14</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/ノートパソコンから投稿.html</guid> <category><![CDATA[ old-blog ]]></category> <description><![CDATA[ <p>ノートパソコンから投稿テスト。
+環境は(ほぼ)クリーンインストールな13.10。</p>
+
+<p>ビルドに必要だったのは</p>
+
+<pre><code>sudo apt-get install ruby-dev libxml2-dev libxslt-dev g++
+sudo gem install bundler
+bundle install
+</code></pre>
  ]]></description> </item> </channel> </rss>

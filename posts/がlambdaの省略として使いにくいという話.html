@@ -12,26 +12,74 @@
   })();
 
 </script> </head> <body> <div class="navigation"> <span class="sitenav"> <a href="/">CL-USER&gt; (start-up (the engine *bp-ze*))</a> </span> <span class="sitenav"> <a href="/profile/">Profile</a> </span><span class="sitenav"> <a href="/publications/">Publications</a> </span><span class="sitenav"> <a href="http://twitter.com/guicho271828">Twitter</a> </span><span class="sitenav"> <a href="http://github.com/guicho271828">Github</a> </span><span class="sitenav"> <a href="https://www.linkedin.com/in/masataro-asai-158a0638/">LinkedIn</a> </span> </div> <div id="content"> <div class="article-meta">
-<h1 class="title">2017-11-06</h1>
+<h1 class="title">＾がlambdaの省略として使いにくいという話</h1>
 <div class="tags">
-Tagged as <a href="/tag/lisp.html">lisp</a> </div>
+Tagged as <a href="/tag/old-blog.html">old-blog</a>, <a href="/tag/lisp.html">lisp</a> </div>
 <div class="date">
-Written on 2017-11-06 16:04:54 </div>
+Written on 2014-03-01 10:34 </div>
 </div>
 <div class="article-content">
-<!-- **** your post here (remove this line) **** -->
+<p>お久しぶりです、浅井です。</p>
 
-<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
-
-<p>I just migrated from Jekyll to Coleslaw.</p>
+<p>論文やばかったり人の論文読んだりgithubで議論したりする毎日ですが、
+表題の通りの議題について。</p>
 
 <!--more-->
 
-<p>This was not the best experinece, but was fun anyways.</p>
+<p>じつは、自分 <strong>括弧</strong> を書くのがshiftキーのせいで結構苦痛に感じています。
+ええ、lisperなのにです。</p>
+
+<p>いや、括弧は好きなんです。好きなんですよ?大好きです。
+でも、僕は手がかなり小さい。
+&lt;Right-shift + 8&gt; は人差し指と小指を最大限伸ばして押すことになります。
+そう、さながらメロイック・サインみたいなカンジで入力しています。</p>
+
+<p>それでですね、二年くらい前、 <em>数字キーのそのシフトキーのXmodmapを入れ替えてみた</em>
+ことがあったんですよ。結局慣れずにもとに戻してしまいましたが。</p>
+
+<p>(通常)</p>
+
+<pre><code>keycode  10 = 1 exclam 1 exclam
+keycode  11 = 2 quotedbl 2 quotedbl
+keycode  12 = 3 numbersign 3 numbersign
+keycode  13 = 4 dollar 4 dollar
+keycode  14 = 5 percent 5 percent
+keycode  15 = 6 ampersand 6 ampersand
+keycode  16 = 7 apostrophe 7 apostrophe
+keycode  17 = 8 parenleft 8 parenleft
+keycode  18 = 9 parenright 9 parenright
+keycode  19 = 0 asciitilde 0 asciitilde
+</code></pre>
+
+<p>(入れ替え)</p>
+
+<pre><code>keycode  10 = exclam 1 exclam 1
+keycode  11 = quotedbl 2 quotedbl 2
+keycode  12 = numbersign 3 numbersign 3
+keycode  13 = dollar 4 dollar 4
+keycode  14 = percent 5 percent 5
+keycode  15 = ampersand 6 ampersand 6
+keycode  16 = apostrophe 7 apostrophe 7
+keycode  17 = parenleft 8 parenleft 8
+keycode  18 = parenright 9 parenright 9
+keycode  19 = asciitilde 0 asciitilde 0
+</code></pre>
+
+<p>だって、lisp書く最中で数字ってそんなに使いませんよ。なにに使うんですか。
+精々使っても 0 か 1 しか無いと思うんですよ。7とか8とか何時使うんですか。
+だったら数字のキーだけ常にCapsLock状態のほうがいいじゃないですか。
+括弧に殉ずるべきです。 <em>すべてはparenthesesのもとに！</em></p>
+
+<p>これと同じ考え方をやれば、(まあ自分のキーボードでは <code>^</code> に shift は要りませんが)
+<code>^</code> をshift無しで入力することも簡単だと思います。
+あるいは、 <code>cl21-mode</code> みたいなマイナーモード作るとか。</p>
+
+<p>というわけです。括弧のためにキーアサインを変更する・・・。
+だれか真似してみたい人はいませんか。</p>
  </div>
 <div class="relative-nav">
-<a href="/posts/Component-Abstraction-Planner-Made-Available.html">Previous</a><br>
-
+<a href="/posts/CV-page-作成中.html">Previous</a><br>
+<a href="/posts/gallery-post.html">Next</a><br>
 </div>
  </div> <div id="disqus_thread"></div>
      <script type="text/javascript">

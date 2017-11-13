@@ -11,33 +11,15 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script> </head> <body> <div class="navigation"> <span class="sitenav"> <a href="/">CL-USER&gt; (start-up (the engine *bp-ze*))</a> </span> <span class="sitenav"> <a href="/profile/">Profile</a> </span><span class="sitenav"> <a href="/publications/">Publications</a> </span><span class="sitenav"> <a href="http://twitter.com/guicho271828">Twitter</a> </span><span class="sitenav"> <a href="http://github.com/guicho271828">Github</a> </span><span class="sitenav"> <a href="https://www.linkedin.com/in/masataro-asai-158a0638/">LinkedIn</a> </span> </div> <div id="content"> <h1 class="title">Content tagged lisp</h1> <div class="article-meta"> <a class="article-title" href="/posts/2017-11-06.html">2017-11-06</a> <div class="date"> posted on 2017-11-06 16:04:54</div> <div class="article"><!-- **** your post here (remove this line) **** -->
-
-<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
-
-<p>I just migrated from Jekyll to Coleslaw.</p>
-
-</div> </div><div class="article-meta"> <a class="article-title" href="/posts/Recursive-Macroexpansion.html">Recursive Macroexpansion</a> <div class="date"> posted on 2014-05-04 15:56:33 +0900</div> <div class="article"><blockquote>
-<p>Yesterday, as a holiday coding, I made yet another macro-expansion system which
-allows for easier compile-time error handling, which I previously described in
-<a href="http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f" >this post</a>.</p>
-</blockquote>
-
-<p>昨日、ゴールデンウィークの遊びコーディングとして、
-<a href="http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f" >前々から言っていた</a> ものに相当する、
-リスタートやコンディションと密に連携できるマクロ展開システムを作りました。</p>
-
-</div> </div><div class="article-meta"> <a class="article-title" href="/posts/Project-started-lisp-on-opencl.html">Project started: lisp on opencl</a> <div class="date"> posted on 2014-03-22 11:35:03 +0900</div> <div class="article"><p>Radeon HD5770と nVidia TESLA c1060 およびニュー電源を手に入れたので、
-この一週間は、
-C言語のサブセットであるOpenCLにコンパイルされるlisp拡張を制作する予定。
-まあ、肝心のビデオカードがまだ動いていないんだけど・・・</p>
-
-</div> </div><div class="article-meta"> <a class="article-title" href="/posts/がlambdaの省略として使いにくいという話.html">＾がlambdaの省略として使いにくいという話</a> <div class="date"> posted on 2014-03-01 10:34</div> <div class="article"><p>お久しぶりです、浅井です。</p>
-
-<p>論文やばかったり人の論文読んだりgithubで議論したりする毎日ですが、
-表題の通りの議題について。</p>
-
-</div> </div><div class="article-meta"> <a class="article-title" href="/posts/紹介-ライブラリ-Inner-conditional.html">紹介: ライブラリ Inner-conditional</a> <div class="date"> posted on 2013-05-06 20:41</div> <div class="article"><p><a href="https://github.com/guicho271828/inner-conditional" >inner-conditional</a> の紹介をします。</p>
+</script> </head> <body> <div class="navigation"> <span class="sitenav"> <a href="/">CL-USER&gt; (start-up (the engine *bp-ze*))</a> </span> <span class="sitenav"> <a href="/profile/">Profile</a> </span><span class="sitenav"> <a href="/publications/">Publications</a> </span><span class="sitenav"> <a href="http://twitter.com/guicho271828">Twitter</a> </span><span class="sitenav"> <a href="http://github.com/guicho271828">Github</a> </span><span class="sitenav"> <a href="https://www.linkedin.com/in/masataro-asai-158a0638/">LinkedIn</a> </span> </div> <div id="content"> <div class="article-meta">
+<h1 class="title">紹介: ライブラリ Inner-conditional</h1>
+<div class="tags">
+Tagged as <a href="/tag/old-blog.html">old-blog</a>, <a href="/tag/lisp.html">lisp</a> </div>
+<div class="date">
+Written on 2013-05-06 20:41 </div>
+</div>
+<div class="article-content">
+<p><a href="https://github.com/guicho271828/inner-conditional" >inner-conditional</a> の紹介をします。</p>
 
 <h1>Q.なにができるの?</h1>
 
@@ -145,160 +127,23 @@ C言語のサブセットであるOpenCLにコンパイルされるlisp拡張を
 <p>続きはまた今度。このライブラリのもうひとつのいいところ、 あなたのライブ
 ラリに、 <strong>条件分岐を隠したまま最適化できる能力</strong> を与えられる点について
 お話しします。</p>
-</div> </div><div class="article-meta"> <a class="article-title" href="/posts/Common-Lisp-で-Code-Walker-を実装するなら-その②.html">Common Lisp で Code Walker を実装するなら その②</a> <div class="date"> posted on 2013-05-06 15:26</div> <div class="article"><p>前回の続き。状態を持つmacroletを書くにはどうすればいいのか！？
-これが答えだ！</p>
-
-<!-- more -->
-
-<h1>回答: Compile-time で restart-bind</h1>
-
-<p>{% include_code サンプルコード lang:cl walk-tree.lisp %}</p>
-
-<p>ね、面白いでしょ？ANSI Hyperspecにある <code>*macroexpand-hook*</code> をうまく使っ
-てみました。 <code>my-macro-start</code> が変な感じになっているのは、ここで書いた
-構造が入れ子になってる可能性があるので、スタックフレームをエミュレート
-しているんです。 <strong>ん、え、スタック？</strong></p>
-
-<p>Schemerな人は言いたいことがすぐにわかることでしょう。ANSIの設計の何が悪
-いって、 <code>defmacro</code> が <strong>継続を引数に取ってくれない</strong> ことなんですよ。だ
-から、外側のマクロを展開した時に、内側のマクロ展開を行うときのレキシカ
-ル環境を操作できない。それだから中途半端な code-walker しか <em>簡単には</em>
-実装できないわけです。</p>
-
-<p>うーん、えーと、もう2,3個思いついたはずなんですけど、思いつかなかった
-ので、一つです。なにか他に案がある人はtwitterかgithub経由で教えてくだ
-さい(^^)</p>
-</div> </div><div class="article-meta"> <a class="article-title" href="/posts/Common-Lisp-で-Code-Walker-を実装するなら.html">Common Lisp で Code Walker を実装するなら</a> <div class="date"> posted on 2013-05-05 22:01</div> <div class="article"><p>Common Lispを使っていると、みんな一度はマクロでDSLを実装したくなります
-よね。みなさんどうしてるでしょう。例えば、自分の作ったマクロ
-<code>my-macro</code> の中では、特定のS式、たとえば=my-clause= に特殊な意味を持つ
-節としての役割を与えたい時。マクロは引数のS式を好きに扱えるので、なんで
-もありです。だから、例えば。</p>
-
-<!-- more -->
-
-<pre><code>
-(defun walk-tree (fn tree)
-  (funcall fn tree
-           (lambda (branch)
-             (mapcar (lambda (branch)
-                       (walk-tree fn branch))
-                     branch))))
-
-(defun precompile-1-layer (sym fn form)
-  (walk-tree
-   (lambda (subform cont)
-     (if (and (consp subform)
-              (equalp sym (car subform)))
-         (apply fn (cdr subform))
-         (if (consp subform)
-             (funcall cont subform)
-             subform)))
-   form))</code></pre>
-
-<p>みたいなのを定義して、該当シンボルを手動で検知して <code>macroexpand</code> の真似
-をする、といった手を使うことができちゃいます。</p>
-
-<pre><code>
-(defmacro my-macro (&body body)
-  `(progn
-     ,@(precompile-1-layer
-        'my-clause
-        (lambda (&body body)
-          (progn (print :hi!)
-                 ,@body))
-        body)))
-
-(my-macro
- (iter (for i below 5)
-       (print i)
-       (my-clause
-        (print :stupid!))))
-
-;; macroexpansion result
-
-(progn
-  (iter (for i below 5)
-        (print i)
-        (progn
-          (print :hi!)
-          (print :stupid!))))  
-</code></pre>
-
-<p>いやまあ、ここで問題になるのが、 <code>macrolet</code> で指定した内容が全然反映され
-ないという事ですね。一言で言えば、頭悪い。</p>
-
-<pre><code>
-(my-macro
- (macrolet ((my-clause (&body body)
-              (subst :im-not-stupid! :stupid! body)))
-   (iter (for i below 5)
-         (print i)
-         (my-clause
-          (print :stupid!)))))
-</code></pre>
-
-<pre><code>
-(progn
- (macrolet ((my-clause (&body body)
-              (subst :im-not-stupid! :stupid! body)))
-  (iter (for i below 5)
-        (print i)
-        (progn
-          (print :hi!)
-          (print :stupid!)))))
-</code></pre>
-
-<p>my-clauseをバイパスして展開してしまっているので、内側のmy-clauseが反映
-されず、 <code>:stupid!</code> が <code>:im-not-stupid!</code> に変換されずに残っている。この問
-題が、<a href="http://m2ym.github.io/blog/2012/04/28/eval-in-macros/" >m2ymさんも言っている</a> <strong>マクロ内でevalするな</strong> 問題です。</p>
-
-<p>でも、evalしないって辛いです。code walkをするなと言っているのと同様。
-じゃあどうすればいいのか。</p>
-
-<h1>全部Macroletに展開する</h1>
-
-<p>これは僕が <a href="https://github.com/guicho271828/inner-conditional" >inner-conditional</a> ではじめに取った手法です。
-<code>macrolet</code> をどんどんネストさせるわけです。</p>
-
-<pre><code>
-(defmacro my-macro (&body body)
-  `(macrolet ((my-clause (&body body)
-                `(progn (print :hi!)
-                        ,@body)))
-     ,@body))
-</code></pre>
-
-<p>これで今回のコードでは当面の目標は達成されます。でも、問題が・・・。な
-にが問題かというと、コンパイル時に変数を触ることができないということ。
-例えば上のコードで、</p>
-
-<pre><code>一回目は〇〇に展開し、二回目は☓☓に展開したい。
-</code></pre>
-
-<p>とか、</p>
-
-<pre><code>i回目にはiを用いて … に展開したい。その指定は実行時ではダメで、
-コンパイル時に定数として挿入したい。
-</code></pre>
-
-<p>とかいう需要があるときにどうするか。</p>
-
-<p><code>macrolet</code> はスペシャルフォームなので、そのマクロ定義だけをletで囲む
-なんてことはできません。出来れば嬉しいんだけれどねえ…</p>
-
-<pre><code>
-(macrolet ((let ((i 0))
-             (my-clause (&body body)
-                (incf i)
-                `(progn (print ,i)
-                        ,@body))))
-  (do-something))
-</code></pre>
-
-<p>ではどうするか。例を示そうと思ったんですが、例を書くだけでも骨が折れる
-ようなコードだったので、続きは次の記事で。</p>
-</div> </div><div class="article-meta"> <a class="article-title" href="/posts/オレオレlisp入門.html">オレオレlisp入門</a> <div class="date"> posted on 2013-03-28 18:03</div> <div class="article"><p>Lispでプログラミングをはじめるには何をすればいいのか、まさに直接的な
-チュートリアルをつくろうと思い立ち、この記事を書き始めました。</p>
-
-<p>古いし読むに耐えない記事なので削除! (2016/3/30)</p>
-</div> </div> <div id="relative-nav">   </div> <div id="tagsoup"> <p>This blog covers <a href="/tag/arduino.html">arduino</a>, <a href="/tag/car.html">car</a>, <a href="/tag/lisp.html">lisp</a>, <a href="/tag/octopress.html">octopress</a>, <a href="/tag/old-blog.html">old-blog</a>, <a href="/tag/research.html">research</a> </div> <div id="monthsoup"> <p>View content from <a href="/date/2017-11.html">2017-11</a>, <a href="/date/2015-01.html">2015-01</a>, <a href="/date/2014-05.html">2014-05</a>, <a href="/date/2014-03.html">2014-03</a>, <a href="/date/2014-01.html">2014-01</a>, <a href="/date/2013-05.html">2013-05</a>, <a href="/date/2013-04.html">2013-04</a>, <a href="/date/2013-03.html">2013-03</a> </div> </div>  <div class="fineprint"> <hr> Unless otherwise credited all material <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"> <img alt="Creative Commons License" style="border-width:0" src="/css/cc-by-sa.png" /> </a> by Masataro Asai <a id="coleslaw-logo" href="https://github.com/redline6561/coleslaw"> <img src="/css/logo_small.jpg" alt="Coleslaw logo" /> </a> </div> </body> </html>
+ </div>
+<div class="relative-nav">
+<a href="/posts/Common-Lisp-で-Code-Walker-を実装するなら-その②.html">Previous</a><br>
+<a href="/posts/ひさしぶりの更新.html">Next</a><br>
+</div>
+ </div> <div id="disqus_thread"></div>
+     <script type="text/javascript">
+       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+       var disqus_shortname = 'guicho271828';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script');
+         dsq.type = 'text/javascript';
+         dsq.async = true;
+         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+           })();
+     </script>
+     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> <div class="fineprint"> <hr> Unless otherwise credited all material <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"> <img alt="Creative Commons License" style="border-width:0" src="/css/cc-by-sa.png" /> </a> by Masataro Asai <a id="coleslaw-logo" href="https://github.com/redline6561/coleslaw"> <img src="/css/logo_small.jpg" alt="Coleslaw logo" /> </a> </div> </body> </html>

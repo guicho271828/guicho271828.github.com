@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en"> <head> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1"> <link href="//fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" /> <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" /> <link href= "/css/style.css" rel="stylesheet" type="text/css" /> <link rel="alternate" href="/rss.xml" type="application/rss+xml" /> <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'foo']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script> </head> <body> <div class="navigation"> <span class="sitenav"> <a href="/">CL-USER&gt; (start-up (the engine *bp-ze*))</a> </span> <span class="sitenav"> <a href="/profile/">Profile</a> </span><span class="sitenav"> <a href="/publications/">Publications</a> </span><span class="sitenav"> <a href="http://twitter.com/guicho271828">Twitter</a> </span><span class="sitenav"> <a href="http://github.com/guicho271828">Github</a> </span><span class="sitenav"> <a href="https://www.linkedin.com/in/masataro-asai-158a0638/">LinkedIn</a> </span> </div> <div id="content"> <div class="article-meta">
+<h1 class="title">Recursive Macroexpansion</h1>
+<div class="tags">
+Tagged as <a href="/tag/old-blog.html">old-blog</a>, <a href="/tag/lisp.html">lisp</a> </div>
+<div class="date">
+Written on 2014-05-04 15:56:33 +0900 </div>
+</div>
+<div class="article-content">
+<blockquote>
+<p>Yesterday, as a holiday coding, I made yet another macro-expansion system which
+allows for easier compile-time error handling, which I previously described in
+<a href="http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f" >this post</a>.</p>
+</blockquote>
+
+<p>昨日、ゴールデンウィークの遊びコーディングとして、
+<a href="http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f" >前々から言っていた</a> ものに相当する、
+リスタートやコンディションと密に連携できるマクロ展開システムを作りました。</p>
+
+<!--more-->
+
+<blockquote>
+<p>Some people may already know that this idea is not so new at all.
+In 
+<a href="http://ja.reddit.com/r/lisp/comments/1xyux9/macro_system_common_lisp_is_still_hard_to_satisfy/cffz33l" >this post</a>
+, nsiivola said that we can alternatively use an implementation-specific
+<code>macroexpand-all</code>. Also, <code>macroexpand-dammit</code> tries to give the similar feature
+within ANSI CL.</p>
+</blockquote>
+
+<p>色々とすでに言われているように実は、
+このライブラリ自体にそんなに新規性はありません。
+まず、同じことを達成するためには、
+<a href="http://ja.reddit.com/r/lisp/comments/1xyux9/macro_system_common_lisp_is_still_hard_to_satisfy/cffz33l" >nsiivola さんの言った</a>ように、
+マクロの中で実装依存の <code>macroexpand-all</code> を使うという手がありました。
+他にも、ANSI CL の中だけで似た機能を作ろうと頑張っている、
+ <code>macroexpand-dammit</code> を使うという手もありました。</p>
+
+<blockquote>
+<p>So why I made it? The first reason is that I didn't want to use the implementation
+specific feature. The second is that, I didn't want to use <code>macroexpand-dammit</code>
+which I have a bitter experience with it.
+When I once saw it, it was not maintained, the implementation was tricky,
+it has a bug, lacks test codes, and was also depended by some other famous library SXML, which I have no idea
+about and also lacks test codes.</p>
+</blockquote>
+
+<p>ではなぜ作ったのか?
+第一に、実装依存の要素を使うというのはあまり好きではありませんでした。
+第二に、これは完全に個人的な理由なんですが、
+<code>macroexpand-dammit</code> には苦い経験があるのであまり使いたくなかったというわけです。
+このライブラリ、まず実装がトリッキー、バグが在る、テストコードがない、という問題だ
+らけのライブラリでした。</p>
+
+<blockquote>
+<p>I once tried to maintain it on github and have my repo followed in quicklisp thanks to
+zach, but my change made some errors in those dependent libraries, and
+honestly I failed. I neglected. Currently quicklisp follows the older version. 
+And I lack my interest now. (However, now I see some issues
+message from someone, so maybe I'll try again)</p>
+</blockquote>
+
+<p>一度、これを直してgithub上でメンテナっぽく振る舞おうと思い、quicklispにも申請したの
+ですが、
+これを治そうとすると、実は有名なライブラリSXMLがこれに依存しているらしく、そこのコー
+ドを壊してしまうそうです。
+で、さらに悪いことに、「メンテナになるよー」と一旦言ったにも関わらず
+個人的に時間が取れなくて放置してしまったため、
+zachさんには「メンテ出来ないならメンテナになろうとするな」と。正論ですね。すみませ
+ん。そんなこんなで、苦い経験だったので触りたくなかったのです。(なんか今見たら
+issueが飛んできていますね・・・そろそろ頑張り直すかも。)</p>
+
+<blockquote>
+<p>Recursive-Macroexpansion has the completely different expansion algorithm than
+those of Common Lisp’s macro expansion. CL is based on macroexpand-1 and
+macroexpand while Recursive-Macroexpansion is based on rmacroexpand only. However,
+normal macros are transparent to macroexpand, so mixing normal macro and recursive
+macro is completely ok.</p>
+</blockquote>
+
+<p>Recursive-Macroexpansion は普通の Common Lisp の展開とは別のアルゴリズムで
+式を展開します。 CL での展開は macroexpand-1 と
+macroexpand でできていますが、 Recursive-Macroexpansion は <code>rmacroexpand</code> だけで出
+来ています。 <code>rmacroexpand</code> は、対応する recursive-macro がなかった場合
+普通の <code>defmacro</code> で定義されたマクロを探し、普通の <code>macroexpand-1</code> で展開するので、
+<code>recursive-macro</code> と普通のマクロを混ぜることは全く問題ありません。</p>
+
+<blockquote>
+<p><strong>BIG NOTE</strong> : This is my FIRST library written in controversial CL21. Thanks to
+Fukamachi !  The reason I chose CL21 is simply because I was interested in it and
+want to try it. However, adoption of <em>CLtL2 Sec.8 environment</em> was also a key
+factor, because it uses <code>augment-environment</code> many times.</p>
+</blockquote>
+
+<p>これはまあCL21で作った最初のライブラリです。使いながらCL21のバグフィック
+スもいくつかしました。 深町さんGJ!
+CL21を使った理由は、まあ使ってみて感触を試してみたかったというのもありますが、
+CLtL2の <code>&amp;environment</code> 構造体関連の関数がCL21ではデフォルトで入っているというのが
+鍵でした。実装は <code>augment-environment</code> に多分に依存しています。(これをしてしまうと、
+実装依存の <code>macroexpand-all</code> とどう違うんだと言われてしまうかもしれませんが・・・)</p>
+
+<p><a href="https://github.com/guicho271828/recursive-macroexpansion">https://github.com/guicho271828/recursive-macroexpansion</a></p>
+
+<p>Lisp on OpenCL は少しずつやってますがあんまり進展はないので、次回はマクロの話をまた
+英語併記でやります。</p>
+ </div>
+<div class="relative-nav">
+<a href="/posts/Project-started-lisp-on-opencl.html">Previous</a><br>
+<a href="/posts/Component-Abstraction-Planner-Made-Available.html">Next</a><br>
+</div>
+ </div> <div id="disqus_thread"></div>
+     <script type="text/javascript">
+       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+       var disqus_shortname = 'guicho271828';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script');
+         dsq.type = 'text/javascript';
+         dsq.async = true;
+         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+           })();
+     </script>
+     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> <div class="fineprint"> <hr> Unless otherwise credited all material <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"> <img alt="Creative Commons License" style="border-width:0" src="/css/cc-by-sa.png" /> </a> by Masataro Asai <a id="coleslaw-logo" href="https://github.com/redline6561/coleslaw"> <img src="/css/logo_small.jpg" alt="Coleslaw logo" /> </a> </div> </body> </html>

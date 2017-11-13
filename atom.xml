@@ -1,9 +1,229 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom"> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link href="https://guicho271828.github.io"/> <link type="application/atom+xml" rel="self" href="https://guicho271828.github.io/atom.xml"/> <updated>Sun, 12 Nov 2017 18:30:17 +0900</updated> <author> <name>Masataro Asai</name> </author> <entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-06.html"/> <title>2017-11-06</title> <published>2017-11-06 16:04:54</published> <updated>2017-11-06 16:04:54</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link href="https://guicho271828.github.io"/> <link type="application/atom+xml" rel="self" href="https://guicho271828.github.io/atom.xml"/> <updated>Mon, 13 Nov 2017 12:21:47 +0900</updated> <author> <name>Masataro Asai</name> </author> <entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-06.html"/> <title>2017-11-06</title> <published>2017-11-06 16:04:54</published> <updated>2017-11-06 16:04:54</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
 
 &lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
 
-&lt;p&gt;I just migrated from Jekyll to Coleslaw. This was not the best experinece, but was fun anyways.&lt;/p&gt;
+&lt;p&gt;I just migrated from Jekyll to Coleslaw.&lt;/p&gt;
 
 &lt;!--more--&gt;
+
+&lt;p&gt;This was not the best experinece, but was fun anyways.&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Component-Abstraction-Planner-Made-Available.html"/> <title>Component Abstraction Planner Made Available</title> <published>2015-01-31 09:53:24 +0900</published> <updated>2015-01-31 09:53:24 +0900</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;Component Abstraction Planner, latest work of mine, has been made publicly
+available at &lt;a href=&quot;https://github.com/guicho271828/CAP&quot;&gt;https://github.com/guicho271828/CAP&lt;/a&gt; . Installation guide is
+provided in the link.&lt;/p&gt;
+
+&lt;p&gt;For ICAPS15 paper, see the Publications page.&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Recursive-Macroexpansion.html"/> <title>Recursive Macroexpansion</title> <published>2014-05-04 15:56:33 +0900</published> <updated>2014-05-04 15:56:33 +0900</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Yesterday, as a holiday coding, I made yet another macro-expansion system which
+allows for easier compile-time error handling, which I previously described in
+&lt;a href=&quot;http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f&quot; &gt;this post&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;昨日、ゴールデンウィークの遊びコーディングとして、
+&lt;a href=&quot;http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f&quot; &gt;前々から言っていた&lt;/a&gt; ものに相当する、
+リスタートやコンディションと密に連携できるマクロ展開システムを作りました。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Some people may already know that this idea is not so new at all.
+In 
+&lt;a href=&quot;http://ja.reddit.com/r/lisp/comments/1xyux9/macro_system_common_lisp_is_still_hard_to_satisfy/cffz33l&quot; &gt;this post&lt;/a&gt;
+, nsiivola said that we can alternatively use an implementation-specific
+&lt;code&gt;macroexpand-all&lt;/code&gt;. Also, &lt;code&gt;macroexpand-dammit&lt;/code&gt; tries to give the similar feature
+within ANSI CL.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;色々とすでに言われているように実は、
+このライブラリ自体にそんなに新規性はありません。
+まず、同じことを達成するためには、
+&lt;a href=&quot;http://ja.reddit.com/r/lisp/comments/1xyux9/macro_system_common_lisp_is_still_hard_to_satisfy/cffz33l&quot; &gt;nsiivola さんの言った&lt;/a&gt;ように、
+マクロの中で実装依存の &lt;code&gt;macroexpand-all&lt;/code&gt; を使うという手がありました。
+他にも、ANSI CL の中だけで似た機能を作ろうと頑張っている、
+ &lt;code&gt;macroexpand-dammit&lt;/code&gt; を使うという手もありました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;So why I made it? The first reason is that I didn&#039;t want to use the implementation
+specific feature. The second is that, I didn&#039;t want to use &lt;code&gt;macroexpand-dammit&lt;/code&gt;
+which I have a bitter experience with it.
+When I once saw it, it was not maintained, the implementation was tricky,
+it has a bug, lacks test codes, and was also depended by some other famous library SXML, which I have no idea
+about and also lacks test codes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ではなぜ作ったのか?
+第一に、実装依存の要素を使うというのはあまり好きではありませんでした。
+第二に、これは完全に個人的な理由なんですが、
+&lt;code&gt;macroexpand-dammit&lt;/code&gt; には苦い経験があるのであまり使いたくなかったというわけです。
+このライブラリ、まず実装がトリッキー、バグが在る、テストコードがない、という問題だ
+らけのライブラリでした。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I once tried to maintain it on github and have my repo followed in quicklisp thanks to
+zach, but my change made some errors in those dependent libraries, and
+honestly I failed. I neglected. Currently quicklisp follows the older version. 
+And I lack my interest now. (However, now I see some issues
+message from someone, so maybe I&#039;ll try again)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;一度、これを直してgithub上でメンテナっぽく振る舞おうと思い、quicklispにも申請したの
+ですが、
+これを治そうとすると、実は有名なライブラリSXMLがこれに依存しているらしく、そこのコー
+ドを壊してしまうそうです。
+で、さらに悪いことに、「メンテナになるよー」と一旦言ったにも関わらず
+個人的に時間が取れなくて放置してしまったため、
+zachさんには「メンテ出来ないならメンテナになろうとするな」と。正論ですね。すみませ
+ん。そんなこんなで、苦い経験だったので触りたくなかったのです。(なんか今見たら
+issueが飛んできていますね・・・そろそろ頑張り直すかも。)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Recursive-Macroexpansion has the completely different expansion algorithm than
+those of Common Lisp’s macro expansion. CL is based on macroexpand-1 and
+macroexpand while Recursive-Macroexpansion is based on rmacroexpand only. However,
+normal macros are transparent to macroexpand, so mixing normal macro and recursive
+macro is completely ok.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Recursive-Macroexpansion は普通の Common Lisp の展開とは別のアルゴリズムで
+式を展開します。 CL での展開は macroexpand-1 と
+macroexpand でできていますが、 Recursive-Macroexpansion は &lt;code&gt;rmacroexpand&lt;/code&gt; だけで出
+来ています。 &lt;code&gt;rmacroexpand&lt;/code&gt; は、対応する recursive-macro がなかった場合
+普通の &lt;code&gt;defmacro&lt;/code&gt; で定義されたマクロを探し、普通の &lt;code&gt;macroexpand-1&lt;/code&gt; で展開するので、
+&lt;code&gt;recursive-macro&lt;/code&gt; と普通のマクロを混ぜることは全く問題ありません。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;BIG NOTE&lt;/strong&gt; : This is my FIRST library written in controversial CL21. Thanks to
+Fukamachi !  The reason I chose CL21 is simply because I was interested in it and
+want to try it. However, adoption of &lt;em&gt;CLtL2 Sec.8 environment&lt;/em&gt; was also a key
+factor, because it uses &lt;code&gt;augment-environment&lt;/code&gt; many times.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;これはまあCL21で作った最初のライブラリです。使いながらCL21のバグフィック
+スもいくつかしました。 深町さんGJ!
+CL21を使った理由は、まあ使ってみて感触を試してみたかったというのもありますが、
+CLtL2の &lt;code&gt;&amp;amp;environment&lt;/code&gt; 構造体関連の関数がCL21ではデフォルトで入っているというのが
+鍵でした。実装は &lt;code&gt;augment-environment&lt;/code&gt; に多分に依存しています。(これをしてしまうと、
+実装依存の &lt;code&gt;macroexpand-all&lt;/code&gt; とどう違うんだと言われてしまうかもしれませんが・・・)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/guicho271828/recursive-macroexpansion&quot;&gt;https://github.com/guicho271828/recursive-macroexpansion&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lisp on OpenCL は少しずつやってますがあんまり進展はないので、次回はマクロの話をまた
+英語併記でやります。&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Project-started-lisp-on-opencl.html"/> <title>Project started: lisp on opencl</title> <published>2014-03-22 11:35:03 +0900</published> <updated>2014-03-22 11:35:03 +0900</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;Radeon HD5770と nVidia TESLA c1060 およびニュー電源を手に入れたので、
+この一週間は、
+C言語のサブセットであるOpenCLにコンパイルされるlisp拡張を制作する予定。
+まあ、肝心のビデオカードがまだ動いていないんだけど・・・&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;なぜかというと、GPU用の補助電源ケーブルの手持ちがないから。
+やろうと思えば自作もできるんだけど、さすがにこれぐらい買おうかなと思う・・・&lt;/p&gt;
+
+&lt;p&gt;なお、試しに電源を入れてみた(補助電源無し)ときには、おそらくきちんと動いていない
+からかものすごいファンがうるさかった。&lt;/p&gt;
+
+&lt;p&gt;{{ &#039;gallery&#039; | image_list }}&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/スタイルをもとに戻した.html"/> <title>スタイルをもとに戻した</title> <published>2014-03-15 21:40:19 +0900</published> <updated>2014-03-15 21:40:19 +0900</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;octopressアップデート後に昔に戻ってしまったスタイルを
+一部戻しました。
+なんでoctopressデフォルトの文字はこんなに文字がでかいのかね。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;TODO: タイトルバーの背景をカーボン調にする。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;code&quot;&gt;
+&lt;span class=&quot;paren1&quot;&gt;(&lt;span class=&quot;code&quot;&gt;&lt;i&gt;&lt;span class=&quot;symbol&quot;&gt;defun&lt;/span&gt;&lt;/i&gt; myfunc &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;arg &amp;amp;optional &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;option &lt;span class=&quot;keyword&quot;&gt;:keyword&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+  &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;declare &lt;span class=&quot;paren3&quot;&gt;(&lt;span class=&quot;code&quot;&gt;ignore option&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+  &lt;span class=&quot;paren2&quot;&gt;(&lt;span class=&quot;code&quot;&gt;print arg&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/gallery-post.html"/> <title>gallery post</title> <published>2014-03-08 00:29</published> <updated>2014-03-08 00:29</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;ギャラリー機能のテスト。
+&lt;a href=&quot;https://github.com/yortz/octopress_gallery&quot;&gt;https://github.com/yortz/octopress_gallery&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;{{ &#039;gallery&#039; | image_list }}&lt;/p&gt;
+
+&lt;p&gt;見た目はあんましよくないね。&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/がlambdaの省略として使いにくいという話.html"/> <title>＾がlambdaの省略として使いにくいという話</title> <published>2014-03-01 10:34</published> <updated>2014-03-01 10:34</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;お久しぶりです、浅井です。&lt;/p&gt;
+
+&lt;p&gt;論文やばかったり人の論文読んだりgithubで議論したりする毎日ですが、
+表題の通りの議題について。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;じつは、自分 &lt;strong&gt;括弧&lt;/strong&gt; を書くのがshiftキーのせいで結構苦痛に感じています。
+ええ、lisperなのにです。&lt;/p&gt;
+
+&lt;p&gt;いや、括弧は好きなんです。好きなんですよ?大好きです。
+でも、僕は手がかなり小さい。
+&amp;lt;Right-shift + 8&amp;gt; は人差し指と小指を最大限伸ばして押すことになります。
+そう、さながらメロイック・サインみたいなカンジで入力しています。&lt;/p&gt;
+
+&lt;p&gt;それでですね、二年くらい前、 &lt;em&gt;数字キーのそのシフトキーのXmodmapを入れ替えてみた&lt;/em&gt;
+ことがあったんですよ。結局慣れずにもとに戻してしまいましたが。&lt;/p&gt;
+
+&lt;p&gt;(通常)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;keycode  10 = 1 exclam 1 exclam
+keycode  11 = 2 quotedbl 2 quotedbl
+keycode  12 = 3 numbersign 3 numbersign
+keycode  13 = 4 dollar 4 dollar
+keycode  14 = 5 percent 5 percent
+keycode  15 = 6 ampersand 6 ampersand
+keycode  16 = 7 apostrophe 7 apostrophe
+keycode  17 = 8 parenleft 8 parenleft
+keycode  18 = 9 parenright 9 parenright
+keycode  19 = 0 asciitilde 0 asciitilde
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(入れ替え)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;keycode  10 = exclam 1 exclam 1
+keycode  11 = quotedbl 2 quotedbl 2
+keycode  12 = numbersign 3 numbersign 3
+keycode  13 = dollar 4 dollar 4
+keycode  14 = percent 5 percent 5
+keycode  15 = ampersand 6 ampersand 6
+keycode  16 = apostrophe 7 apostrophe 7
+keycode  17 = parenleft 8 parenleft 8
+keycode  18 = parenright 9 parenright 9
+keycode  19 = asciitilde 0 asciitilde 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;だって、lisp書く最中で数字ってそんなに使いませんよ。なにに使うんですか。
+精々使っても 0 か 1 しか無いと思うんですよ。7とか8とか何時使うんですか。
+だったら数字のキーだけ常にCapsLock状態のほうがいいじゃないですか。
+括弧に殉ずるべきです。 &lt;em&gt;すべてはparenthesesのもとに！&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;これと同じ考え方をやれば、(まあ自分のキーボードでは &lt;code&gt;^&lt;/code&gt; に shift は要りませんが)
+&lt;code&gt;^&lt;/code&gt; をshift無しで入力することも簡単だと思います。
+あるいは、 &lt;code&gt;cl21-mode&lt;/code&gt; みたいなマイナーモード作るとか。&lt;/p&gt;
+
+&lt;p&gt;というわけです。括弧のためにキーアサインを変更する・・・。
+だれか真似してみたい人はいませんか。&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/CV-page-作成中.html"/> <title>CV page 作成中</title> <published>2014-01-17 00:44</published> <updated>2014-01-17 00:44</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;せっかく業績ができたんだから、
+人の真似をして、自分のCVページを作ってみようと思う。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;何がいるかな。
+&lt;a href=&quot;http://yoshiori.github.io/&quot; &gt;ここ&lt;/a&gt;を見てみよう。
+経歴、経験、interest、publicationsでしょ・・・
+職歴(アルバイトしか無いな)・・・&lt;/p&gt;
+
+&lt;p&gt;一方&lt;a href=&quot;http://metahack.org/&quot; &gt;指導教員の自己紹介ページ&lt;/a&gt; 。うーん、どうやっても勝てん。&lt;/p&gt;
+
+&lt;p&gt;まだ時期尚早かなという気もしてきた。
+うーん・・・どうしようかな。
+せめてICAPS workshop 2014 終わってからにするか？&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/テスト2.html"/> <title>テスト2</title> <published>2014-01-05 13:50</published> <updated>2014-01-05 13:50</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;テスト2です。
+octopress, なんかおかしい？&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/ノートパソコンから投稿.html"/> <title>ノートパソコンから投稿</title> <published>2014-01-05 12:14</published> <updated>2014-01-05 12:14</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;ノートパソコンから投稿テスト。
+環境は(ほぼ)クリーンインストールな13.10。&lt;/p&gt;
+
+&lt;p&gt;ビルドに必要だったのは&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install ruby-dev libxml2-dev libxslt-dev g++
+sudo gem install bundler
+bundle install
+&lt;/code&gt;&lt;/pre&gt;
 </content> </entry> </feed>
