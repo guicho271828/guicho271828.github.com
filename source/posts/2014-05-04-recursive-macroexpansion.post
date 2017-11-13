@@ -14,6 +14,8 @@ format: md
 [前々から言っていた](http://qiita.com/guicho271828/items/07ba4ff11bff494dc03f) ものに相当する、
 リスタートやコンディションと密に連携できるマクロ展開システムを作りました。
 
+<!--more-->
+
 > Some people may already know that this idea is not so new at all.
 > In 
 > [this post](http://ja.reddit.com/r/lisp/comments/1xyux9/macro_system_common_lisp_is_still_hard_to_satisfy/cffz33l)
