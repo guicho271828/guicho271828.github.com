@@ -6,7 +6,9 @@ Local Variables:
 mode : html
 End:
 -->{\n}
-<div class="article-meta">{\n}
+
+<article>
+<header class="article-meta">{\n}
   <h1 class="title">{$post.title}</h1>{\n}
   <div class="tags">{\n}
     {if $post.tags}
@@ -21,11 +23,12 @@ End:
       Written on {$post.date}
     {/if}
   </div>{\n}
-</div>{\n}
+</header>{\n}
+
 <div class="article-content">{\n}
   {$post.text |noAutoescape}
 </div>{\n}
-
+</article>
 
 <nav>
   <div class="relative-nav">{\n}
