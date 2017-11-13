@@ -2,4 +2,8 @@
 
 # ros install clack
 
-clackup <(echo "(lack:builder (:static :path #'identity) #'identity)")
+cd deploy
+while true
+do
+    clackup <(echo "(lack:builder (:static :path #'identity) #'identity)")
+done
