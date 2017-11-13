@@ -39,11 +39,11 @@ body {
     a {
         color: gray;
     }
-    span.sitenav:not(:last-child):after {
-        content: '|';
     .title {
         font-size: 2em;
     }
+    span.sitenav:not(:last-child):after {
+        content: '|';
     }
 }
 
