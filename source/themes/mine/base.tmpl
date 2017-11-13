@@ -26,6 +26,7 @@ End:
   <body>{\n}
     <nav class="navigation">{\n}
       <span class="title"> <a href="/">{$config.title}</a> </span>{\n}
+      <div class="sitenav">
       {foreach $link in $config.sitenav}
       <span class="sitenav">
         {if $link.relative}
@@ -35,6 +36,7 @@ End:
         {/if}
       </span>{\n}
       {/foreach}
+      </div>
     </nav>{\n}
     <main id="content">{\n}
       {$raw |noAutoescape}

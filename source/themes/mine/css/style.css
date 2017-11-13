@@ -48,10 +48,13 @@ body {
   color: #373737;
   text-shadow: 1px 1px 1px grey; }
   .navigation .title {
-    font-size: 2em;
+    font-size: 1.32em;
+    font-weight: bold;
     left: 0; }
+  .navigation div.sitenav {
+    display: inline-block; }
   .navigation span.sitenav {
-    margin: 2em; }
+    margin: 1em; }
 
 article {
   padding: 3em; }

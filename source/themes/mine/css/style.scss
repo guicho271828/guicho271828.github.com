@@ -46,12 +46,16 @@ body {
     color: $text;
     text-shadow: 1px 1px 1px grey;
     .title {
-        font-size: 2em;
+        font-size: 1.32em;
+        font-weight: bold;
         // margin-right: auto;
         left: 0;
     }
+    div.sitenav {
+        display: inline-block;
+    }
     span.sitenav {
-        margin: 2em;
+        margin: 1em;
         // &:not(:last-child):after {
         //     content: '|';
         // }
