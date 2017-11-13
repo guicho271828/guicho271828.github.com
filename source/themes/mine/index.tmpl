@@ -8,32 +8,34 @@ mode : html
 End:
 -->{\n}
 {foreach $obj in $index.content}
-  <div class="article-meta">{\n}
-    <a class="article-title" href="/{$obj.url}">{$obj.title}</a>{\n}
-    <div class="date"> posted on {$obj.date}</div>{\n}
-    <div class="article">{$obj.excerpt |noAutoescape}</div>{\n}
-  </div>{\n}
+<div class="article-meta">{\n}
+  <a class="article-title" href="/{$obj.url}">{$obj.title}</a>{\n}
+  <div class="date"> posted on {$obj.date}</div>{\n}
+  <div class="article">{$obj.excerpt |noAutoescape}</div>{\n}
+</div>{\n}
 {/foreach}
-<div id="relative-nav">
-  {if $prev} <a href="/{$prev.url}">Previous</a> {/if}
-  {if $next} <a href="/{$next.url}">Next</a> {/if}
-</div>{\n}
-{if $tags}
-<div id="tagsoup">
-  This blog covers
+<nav>{\n}
+  <div id="relative-nav">
+    {if $prev} <a href="/{$prev.url}">Previous</a> {/if}
+    {if $next} <a href="/{$next.url}">Next</a> {/if}
+  </div>{\n}
+  {if $tags}
+  <div id="tagsoup">
+    This blog covers
     {foreach $tag in $tags}
-      <a href="/{$tag.url}">{$tag.name}</a>
-      {if not isLast($tag)},{sp}{/if}
+    <a href="/{$tag.url}">{$tag.name}</a>
+    {if not isLast($tag)},{sp}{/if}
     {/foreach}
-</div>{\n}
-{/if}
-{if $months}
-<div id="monthsoup">
-  View content from
+  </div>{\n}
+  {/if}
+  {if $months}
+  <div id="monthsoup">
+    View content from
     {foreach $month in $months}
-      <a href="/{$month.url}">{$month.name}</a>
-      {if not isLast($month)},{sp}{/if}
+    <a href="/{$month.url}">{$month.name}</a>
+    {if not isLast($month)},{sp}{/if}
     {/foreach}
-</div>{\n}
+  </div>{\n}
+</nav>
 {/if}
 {/template}
