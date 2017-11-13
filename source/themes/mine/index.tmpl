@@ -2,6 +2,11 @@
 
 {template index}
 <h1 class="title">{$index.title}</h1>
+<!--
+Local Variables:
+mode : html
+End:
+-->
 {foreach $obj in $index.content}
   <div class="article-meta">
     <a class="article-title" href="/{$obj.url}">{$obj.title}</a>
