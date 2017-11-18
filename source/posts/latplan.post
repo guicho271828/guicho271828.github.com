@@ -1,0 +1,29 @@
+---
+title: Latplan source code now available
+tags: bar, baz
+date: 2017-11-05 16:59:47
+format: md
+---
+
+<!-- **** your post here (remove this line) **** -->
+<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
+
+I would proudly announce that the source code of LatPlan, our
+domain-independent, image-based classical planner, is now made available on Github!
+
+<!--more-->
+
+https://github.com/guicho271828/latplan
+
+The code is a result of almost one-year development, and should be an important
+first step in the neural(subsymbolic)-symbolic interaction. Also, it subsumes the
+existing Action Model Acquisition method in a sense that it has a domain-independent AMA
+system which does not even depend on the action names!
+
+After the submission of the first version of the paper on Arxiv (which did not
+have AMA_2), I have been inquired several times for the source code of Latplan.
+As ML community is significantly different from where we usually publish,
+we took a rather conservative step in publishing the result compared to the standard in ML community.
+Sorry for that! But hey, it is finally out.
+
+We plan to update the Arxiv version (currently v2, next v3) after AAAI Camera-Ready submission is completed.
