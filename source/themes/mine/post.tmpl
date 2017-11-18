@@ -1,28 +1,29 @@
 {namespace coleslaw.theme.mine}
 
 {template post}
+
+<!-- inside main -->
 <!--
 Local Variables:
 mode : html
 End:
 -->{\n}
 
-<article>
+<article class="post">
 <header>{\n}
-  <h1>{$post.title}</h1>{\n}
+  <h1 class="pagetitle">{$post.title}</h1>{\n}
+  {if $post.tags}
   <div class="tags">{\n}
-    {if $post.tags}
-      Tagged as {foreach $tag in $post.tags}
-        <a href="/{$tag.url}">{$tag.name}</a>{nil}{\n}
-          {if not isLast($tag)},{sp}{/if}
-      {/foreach}
-    {/if}
+    Tagged as {foreach $tag in $post.tags}
+    <a href="/{$tag.url}">{$tag.name}</a>{nil}{\n}
+    {if not isLast($tag)},{sp}{/if}
+    {/foreach}
   </div>{\n}
-  <div class="date">{\n}
-    {if $post.date}
-      Written on {$post.date}
-    {/if}
-  </div>{\n}
+  {/if}
+  {if $post.date}
+  <div class="date">Written on <time>{$post.date}</time></div>
+  {/if}
+  </time>{\n}
 </header>{\n}
 
 <div class="content">{\n}

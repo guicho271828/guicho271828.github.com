@@ -12,8 +12,8 @@ End:
     <title>{$config.title}</title>{\n}
     <meta http-equiv="content-type" content="text/html; charset={$config.charset}" />{\n}
     <meta name="viewport" content="width=device-width, initial-scale=1">{\n}
-    <!-- <link href="//fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />{\n} -->
-    <!-- <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" />{\n} -->
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css"> -->
     <link href= "/css/font-awesome.min.css" rel="stylesheet" type="text/css" />{\n}
     <link href= "/css/style.css" rel="stylesheet" type="text/css" />{\n}
     <link rel="alternate" href="/rss.xml" type="application/rss+xml" />{\n}
@@ -24,21 +24,24 @@ End:
     {/if}{\n}
   </head>{\n}
   <body>{\n}
+    <!-- navigation -->
     <nav class="navigation">{\n}
-      <span class="title"> <a href="/">{$config.title}</a> </span>{\n}
-      <div class="sitenav">
-      {foreach $link in $config.sitenav}
-      <span class="sitenav">
-        {if $link.relative}
-        <a href="/{$link.url}">{$link.name |noAutoescape}</a>
-        {else}
-        <a href="{$link.url}">{$link.name |noAutoescape}</a>
-        {/if}
-      </span>{\n}
-      {/foreach}
-      </div>
+      <div class="title"> <a href="/">{$config.title}</a> </div>
+      <ul>
+        {foreach $link in $config.sitenav}
+        <li>
+          {if $link.relative}
+          <a href="/{$link.url}">{$link.name |noAutoescape}</a>
+          {else}
+          <a href="{$link.url}">{$link.name |noAutoescape}</a>
+          {/if}
+        </li>{\n}
+        {/foreach}
+      </ul>
     </nav>{\n}
-    <main id="content">{\n}
+
+    <!-- main -->
+    <main>{\n}
       {$raw |noAutoescape}
     </main>{\n}
     {if $injections.body}
@@ -46,17 +49,20 @@ End:
         {$injection |noAutoescape}
       {/foreach}
     {/if}{\n}
-    <footer class="fineprint">
+
+    <!-- footer -->
+    <footer>
       Unless otherwise credited all material
       {if $config.license}
-        {$config.license}
+      {$config.license}
       {else}
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
-          <img alt="Creative Commons License" style="border-width:0" src="/css/cc-by-sa.png" />
-        </a>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+        <img alt="Creative Commons License" style="border-width:0" src="/css/cc-by-sa.png" />
+      </a>
       {/if}
       by {$config.author}
-      <a id="coleslaw-logo" href="https://github.com/redline6561/coleslaw">
+      <br>
+      <a href="https://github.com/redline6561/coleslaw">
         <img src="/css/logo_small.jpg" alt="Coleslaw logo" />
       </a>
     </footer>{\n}
