@@ -1,21 +1,5 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom"> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link href="https://guicho271828.github.io"/> <link type="application/atom+xml" rel="self" href="https://guicho271828.github.io/atom.xml"/> <updated>Sat, 18 Nov 2017 17:17:02 +0900</updated> <author> <name>Masataro Asai</name> </author> <entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-13.html"/> <title>2017-11-13</title> <published>2017-11-13 12:23:59</published> <updated>2017-11-13 12:23:59</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
-
-&lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
-
-&lt;p&gt;Restored most of the posts in the old blog.&lt;/p&gt;
-
-&lt;!--more--&gt;
-</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-06.html"/> <title>2017-11-06</title> <published>2017-11-06 16:04:54</published> <updated>2017-11-06 16:04:54</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
-
-&lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
-
-&lt;p&gt;I just migrated from Jekyll to Coleslaw.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;This was not the best experinece, but was fun anyways.&lt;/p&gt;
-</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Latplan-source-code-now-available.html"/> <title>Latplan source code now available</title> <published>2017-11-05 16:59:47</published> <updated>2017-11-05 16:59:47</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link href="https://guicho271828.github.io"/> <link type="application/atom+xml" rel="self" href="https://guicho271828.github.io/atom.xml"/> <updated>Sat, 18 Nov 2017 17:22:00 +0900</updated> <author> <name>Masataro Asai</name> </author> <entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Latplan-source-code-now-available.html"/> <title>Latplan source code now available</title> <published>2017-11-18 16:59:47</published> <updated>2017-11-18 16:59:47</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
 
 &lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
 
@@ -38,6 +22,22 @@ we took a rather conservative step in publishing the result compared to the stan
 Sorry for that! But hey, it is finally out.&lt;/p&gt;
 
 &lt;p&gt;We plan to update the Arxiv version (currently v2, next v3) after AAAI Camera-Ready submission is completed.&lt;/p&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-13.html"/> <title>2017-11-13</title> <published>2017-11-13 12:23:59</published> <updated>2017-11-13 12:23:59</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
+
+&lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
+
+&lt;p&gt;Restored most of the posts in the old blog.&lt;/p&gt;
+
+&lt;!--more--&gt;
+</content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/2017-11-06.html"/> <title>2017-11-06</title> <published>2017-11-06 16:04:54</published> <updated>2017-11-06 16:04:54</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;!-- **** your post here (remove this line) **** --&gt;
+
+&lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
+
+&lt;p&gt;I just migrated from Jekyll to Coleslaw.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;This was not the best experinece, but was fun anyways.&lt;/p&gt;
 </content> </entry><entry> <link type="text/html" rel="alternate" href="https://guicho271828.github.io/posts/Component-Abstraction-Planner-Made-Available.html"/> <title>Component Abstraction Planner Made Available</title> <published>2015-01-31 09:53:24 +0900</published> <updated>2015-01-31 09:53:24 +0900</updated> <author> <name>Masataro Asai</name> <uri>https://guicho271828.github.io</uri> </author> <content type="html">&lt;p&gt;Component Abstraction Planner, latest work of mine, has been made publicly
 available at &lt;a href=&quot;https://github.com/guicho271828/CAP&quot;&gt;https://github.com/guicho271828/CAP&lt;/a&gt; . Installation guide is
 provided in the link.&lt;/p&gt;
