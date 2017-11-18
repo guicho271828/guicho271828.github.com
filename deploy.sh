@@ -6,7 +6,7 @@
 )
 
 (
-    cd deploy
+    cd _deploy
     git add -A
     git commit -m "deploy"
     git push
