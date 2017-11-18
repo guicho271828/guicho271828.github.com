@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link>https://guicho271828.github.io</link> <atom:link href="https://guicho271828.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Mon, 13 Nov 2017 17:31:55 +0900</pubDate> <item> <title>2017-11-13</title> <link>https://guicho271828.github.io/posts/2017-11-13.html</link> <pubDate>2017-11-13 12:23:59</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/2017-11-13.html</guid> <category><![CDATA[ bar ]]></category><category><![CDATA[ baz ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>CL-USER&gt; (start-up (the engine *bp-ze*))</title> <link>https://guicho271828.github.io</link> <atom:link href="https://guicho271828.github.io/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Sat, 18 Nov 2017 17:17:02 +0900</pubDate> <item> <title>2017-11-13</title> <link>https://guicho271828.github.io/posts/2017-11-13.html</link> <pubDate>2017-11-13 12:23:59</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/2017-11-13.html</guid> <category><![CDATA[ bar ]]></category><category><![CDATA[ baz ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
 
 <!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
 
@@ -15,6 +15,29 @@
 <!--more-->
 
 <p>This was not the best experinece, but was fun anyways.</p>
+ ]]></description> </item><item> <title>Latplan source code now available</title> <link>https://guicho271828.github.io/posts/Latplan-source-code-now-available.html</link> <pubDate>2017-11-05 16:59:47</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/Latplan-source-code-now-available.html</guid> <category><![CDATA[ bar ]]></category><category><![CDATA[ baz ]]></category> <description><![CDATA[ <!-- **** your post here (remove this line) **** -->
+
+<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
+
+<p>I would proudly announce that the source code of LatPlan, our
+domain-independent, image-based classical planner, is now made available on Github!</p>
+
+<!--more-->
+
+<p>https://github.com/guicho271828/latplan</p>
+
+<p>The code is a result of almost one-year development, and should be an important
+first step in the neural(subsymbolic)-symbolic interaction. Also, it subsumes the
+existing Action Model Acquisition method in a sense that it has a domain-independent AMA
+system which does not even depend on the action names!</p>
+
+<p>After the submission of the first version of the paper on Arxiv (which did not
+have AMA_2), I have been inquired several times for the source code of Latplan.
+As ML community is significantly different from where we usually publish,
+we took a rather conservative step in publishing the result compared to the standard in ML community.
+Sorry for that! But hey, it is finally out.</p>
+
+<p>We plan to update the Arxiv version (currently v2, next v3) after AAAI Camera-Ready submission is completed.</p>
  ]]></description> </item><item> <title>Component Abstraction Planner Made Available</title> <link>https://guicho271828.github.io/posts/Component-Abstraction-Planner-Made-Available.html</link> <pubDate>2015-01-31 09:53:24 +0900</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/Component-Abstraction-Planner-Made-Available.html</guid> <category><![CDATA[ old-blog ]]></category><category><![CDATA[ research ]]></category> <description><![CDATA[ <p>Component Abstraction Planner, latest work of mine, has been made publicly
 available at <a href="https://github.com/guicho271828/CAP">https://github.com/guicho271828/CAP</a> . Installation guide is
 provided in the link.</p>
@@ -222,6 +245,4 @@ keycode  19 = asciitilde 0 asciitilde 0
 <p>まだ時期尚早かなという気もしてきた。
 うーん・・・どうしようかな。
 せめてICAPS workshop 2014 終わってからにするか？</p>
- ]]></description> </item><item> <title>テスト2</title> <link>https://guicho271828.github.io/posts/テスト2.html</link> <pubDate>2014-01-05 13:50</pubDate> <author>Masataro Asai</author> <guid isPermaLink="true">https://guicho271828.github.io/posts/テスト2.html</guid> <category><![CDATA[ old-blog ]]></category> <description><![CDATA[ <p>テスト2です。
-octopress, なんかおかしい？</p>
  ]]></description> </item> </channel> </rss>
