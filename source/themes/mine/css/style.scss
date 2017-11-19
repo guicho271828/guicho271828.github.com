@@ -128,12 +128,12 @@ a {
     font-style: italic;
 }
 pre {
+    background-color: $background1;
     overflow: auto;
     margin-left: 1em;
     padding: 0.5em;
     border-left: 1px dashed;
     
-    background-color: white;
     padding: .75em .5em;
     font-family: (unquote mono-font);
 }
