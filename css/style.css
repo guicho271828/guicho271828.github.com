@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa|Montserrat");
 @media screen and (min-width: 105px) {
   body {
     font-size: 2px; } }
@@ -93,11 +92,11 @@ a {
   font-style: italic; }
 
 pre {
+  background-color: #2e3434;
   overflow: auto;
   margin-left: 1em;
   padding: 0.5em;
   border-left: 1px dashed;
-  background-color: white;
   padding: .75em .5em;
   font-family: unquote mono-font; }
 
