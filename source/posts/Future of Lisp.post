@@ -1,0 +1,42 @@
+---
+title: My unorganized opinion on the future of Lisp
+tags: lisp
+date: 2018-01-18 14:00:56
+format: md
+---
+
+<!-- **** your post here (remove this line) **** -->
+<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
+
+Initial draft.
+
+<!--more-->
+
+racket-like diversion from CL
+
+lisp namespace by default
+
+pattern matching by default
+
+the better build system, combined with
+
+a better packaging system --- directory as a package, rather than file as a package
+
+Adapting changes in CL21 (removing old functions)
+
+better stdlib
+
+templates
+
+**Focus on AI**
+
+extensible arithmetic
+
+AD
+
+prolog, sat, smt minilanguages
+
+better documented VOP handling
+
+SSE
+
