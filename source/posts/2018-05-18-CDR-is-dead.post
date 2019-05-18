@@ -1,0 +1,224 @@
+---
+title: CDR is dead
+tags: lisp
+date: 2018-05-19 00:00
+format: md
+---
+
+
+
+CDR is dead. The last submission to CDR repository was 
+[CDR 14: Detecting Implementation of CDR's in Common Lisp Runtimes](https://common-lisp.net/project/cdr/document/14/index.html),
+submitted on June 17, 2013 and accepted on August 4, 2013.
+
+I believe there were countless other attempts to improve Lisp as a language.
+A recent one is CL21, started around 2014 under the warning label stating that
+it is an experimental project, and end up being stalling too.
+
+Improving Lisp is a hard problem. 
+As [Lisp Curse](http://www.winestockwebdesign.com/Essays/Lisp_Curse.html) article, published on April 15, 2011, stated,
+
+> Lisp is so powerful that problems which are technical issues in other programming languages are social issues in Lisp.
+
+<!-- April 15, 2011.  -->
+
+As a result of the stagnation in the development of Lisp as a language,
+multiple Lisp-flavored, or Lisp-inspired languages have emerged.
+Racket and Clojure gained significant popularity in the web development community.
+People who love parentheses would prefer Lisp Flavored Erlang over the original Erlang.
+Scientific computation language Julia inherited many aspects of lisp, with multiple dispatch and a true macro system.
+The bright side of the emergence of these languages is that, after all, Lisp -- or its ideas -- was **right**.
+However, it is also an indication of hesitation against directly tackling this problem.
+
+In this article, based on Lisp Curse, I try to provide a short analysis of the
+Lisp problem as a social problem, not technical.  What was the reason both CDR
+(5 years from the start to end) and CL21 (rather quickly) failed? Did CL21
+improved over CDR? Is there hope?  Why are other languages being successful
+while CL stagnates?  Is *specification, not implementation* scheme hindering our
+progress?  Then I will shed some light on a recent happening of
+`package-local-nicknames` and try to generalize the situation to
+propose a potential answer to this problem.
+
+Note: I primarily focus on Common Lisp and not Scheme because Scheme has a
+significantly different community and because I have virtually no experience
+on it.
+
+# CDR
+
+[Common Lisp Document Repository (CDR)](https://common-lisp.net/project/cdr/index.html)
+is a repository of tex, text, html, pdf files about the proposal for improving Common Lisp.
+CDR started around 2006 to address the high cost of establishing the CL ANSI standard
+("10 years and at least $400K").
+The direction toward being more agile was correct, yet I can observe that it
+lost its traction quickly --- the CDR 5 submission was made on Feb 2008, two
+years after the submission of CDR 4.
+
+CDR is operated by a group of editors and follows the style of academic paper submissions.
+This would have made it difficult to submit a new article.
+
+The problem in CDR is that it is merely a proposal for the
+new interface and does not accompany the *working implementation* as well as its
+*nice application as a demonstration* that depends on the work.  For example,
+[CDR 2: A generic hash table interface specification for Common
+Lisp](https://common-lisp.net/project/cdr/document/2/index.html) is basically
+ignored on SBCL, which has its own interface for extending the hash functions
+via
+[`define-hash-table-test`](http://www.sbcl.org/manual/index.html#Hash-Table-Extensions).
+
+This is a warning sign --- in fact, many articles end up being untested,
+or could be something that tries to find its application when there is no demand.
+A similar issue is already addressed in the programming language community by
+requiring the authors to submit an implementation source code along with papers
+(called [Artifact Evaluation](https://popl19.sigplan.org/track/POPL-2019-Artifact-Evaluation)).
+
+# CL21
+
+[CL21](https://github.com/cl21/cl21/), "Common Lisp in the 21st Century",
+is an experimental project aiming at redesigning a new successor of Common Lisp.
+It takes a form of Quicklisp dist, and is designed to be loadable from existing Common Lisp implementations.
+
+It has focus on two aspects -- cleanup and refactoring of the old, deprecated functions
+in Common Lisp, strong push on 1-package-per-1-file style (CL symbols are reexported by several packages),
+inclusion of existing de-facto standard API (e.g. bordeaux-threads and trivial-garbage),
+and the focus of lazy sequence in the later stage of the development.
+
+One significant improvement of CL21 over the CDR scheme is that it runs on Github and allows for open discussion.
+It also comes with source code and people can submit their code.
+Thanks to this point, CL21's issue threads contain an interesting list of thoughts that are still accessible.
+
+However, there was also a drawback -- discussion mainly centered around tiny details and no *important* discussion on a significant topic
+was made.
+This was subject to [The Law of Triviality](https://en.wikipedia.org/wiki/Law_of_triviality):
+
+> The time spent on any item of the agenda will be in inverse proportion to the sum [of money] involved.
+
+and its specialized version applied to Programming Languages, [Wadler's law](https://wiki.haskell.org/Wadler's_Law):
+
+    In any language design, the total time spent discussing a feature in this list
+    is proportional to two raised to the power of its position.
+
+        Semantics
+        Syntax
+        Lexical syntax
+        Lexical syntax of comments
+
+    (In short, for every hour spent on semantics, 8 hours will be spent on the syntax of comments).
+
+Unfortunately, CL21 repository was a clear example of this law.
+The topic of the most commented issue thread was merely a syntax sugar!
+
+![cl21-wadler.png](../static/cl21-wadler.png)
+
+The participation cost was also low, resulting in spurious proposals from the less experienced participants.
+
+Finally, CL21 has one core design issue: It is a set of libraries built over
+Common Lisp, and is not able to extend CL in the true sense. It cannot alter or
+enhance the fundamental concepts of Common Lisp, e.g., the type system,
+evaluation rules or file loading.
+
+# What happened in `package-local-nicknames` ?
+
+CDR approach does not work. CDR approach is very similar to CL
+standardization --- define some form of the standard, then hope someone to implement
+it. THIS DOES NOT WORK.
+Without a working code, everything is a trash talk. Code is eloquent. The better
+approach is to propose ideas by showing something that works.
+However, the approach taken by CL21 was indeed too shallow to introduce
+core changes in the language.
+
+
+
+`package-local-nickname` took a different approach. There was a working
+implementation of p-l-n in SBCL, and that was forked to the other
+implementations. This is how things should get done, and the *only* way it should get done.
+Exchange of implementation is a form of [Crossover](https://en.wikipedia.org/wiki/Crossover_(genetic_algorithm)) ---
+one of the main driving force of Evolutionary Algorithms, a widely accepted optimization method
+and also the "last resort" for problems with
+no gradient information nor the reward signals for the improvement.
+
+We already know there are other instances of de-facto standard. Originally CLOS was a library built over non-CLOS lisp.
+MOP is adopted by many implementations. `extended-sequence`, threading, weak hash tables, CFFI are other successful instances.
+However, I believe `package-local-nickname` is one of the rare events where the actual code (not just API) was copied across lisp implementations.
+
+# Proposed approach: Nightly Common Lisp
+
+So far, the approach taken by p-l-n can be summarized as follows:
+*Let some implementation implement some feature, fork the extension to multiple implementations, then make it the de-facto standard*.
+However, this also causes another problem: **Stagnation**.
+Recall that p-l-n was initially proposed by 3b in 2011 and took [8 years](https://github.com/3b/package-local-nicknames) to spread!
+I suspect the reason for this is again social.
+I have experience with the maintainers of both SBCL and CCL. The problem is that 
+they lack manpower and generally avoid patches that increase their effort.
+They tend to be conservative against the patches that introduces potential bugs and/or additional maintenance cost.
+Their primary mindset is that the modification should be *limited* to the standard unless necessary for the implementation's own sake.
+
+My answer to this problem is a simple, yet logical one.
+To have an implementation, forked from
+other existing one (e.g. SBCL), that accepts more extensions and proposals, merges radical
+commits and changes aggressively in an agile manner.
+Whenever we hack Lisp, we tend to take the implementation for granted,
+and does not care about the internals. The maintainers are also aware of this, thus make a wall
+so that newcomers won't break their build and cause headache.
+What was lacking in Lisp community is the *comfortable playground / sandbox* that
+is free to change, easy to customize, complete and has plenty of documentation.
+
+While there are SICL and Clasp, they are still struggling to fix the bug and comform to the standard
+and therefore not yet appropriate as the candidate of the base fork, at the moment.
+My proposed approach is complementary to their goals --- Crossover hypothesis
+still applies and I can merge changes (done in the aggressive SBCL fork) into SICL in the future.
+
+I reiterate: Evolution of CL as a language is primarily a social problem, not technical.
+The problem with the Lisp community is that it did not seriously consider this problem ---
+we tend to consider ourselves computer hackers, not social hackers.
+
+# Other languages
+
+A key to bring success to such a social experiment would be an appropriate environment.
+In designing an environment I want to learn from examples in the other programming languages.
+Popular languages and their communities are characterized by the following aspects (relative to CL):
+
+**Demands and the clear scope.** Julia clearly labels itself as a scientific
+computation language -- it has a clear target audience. This is a huge benefit,
+as the project has a clearer goal --- satisfying the need of the
+target audience. Racket started as an educational system, thus it has an excellent, batteries-included aspect.
+
+**More academics.** The larger influx of people implies more technical and
+theoretical views are introduced to the discussion that forms the language.
+Moreover, the involvement by the academics means better documentation --- I remind you that *academics got
+their positions through writing papers, and thus tend to be good writers.*
+See this [Racket manifesto](https://felleisen.org/matthias/manifesto/)
+--- a beautiful piece of work that defines its scope and goals.
+I know many academics already quit Lisp --- For example, [Wheeler Ruml](https://www.cs.unh.edu/~ruml/) used to be a Lisper
+(he is mentioned in [Cliki](https://www.cliki.net/Common%20Lisp%20and%20gnuplot)), but
+already left for OCaml.
+
+**Versioned release of the language** and a **community system for managing the language proposal** that makes proposals visible.
+For example, Python has [PEP](https://www.python.org/dev/peps/), and ECMAScript has a staging system for the new features.
+One crucial difference between CL and these languages is that Common Lisp can manipulate its syntactic appearances via macros
+and deliver the result as a library. Since PEP and ECMA features are mostly syntactic, the large part of the discussion happened in PEP
+would not be necessary for Common Lisp. However, the system for managing and tracking the progress would be beneficial to Common Lisp
+under some adjustment.
+
+However, there is one thing that should be carefully avoided.
+It is **potential backward-incompatibility**. Python is notorious for its
+backward incompatibility across versions, rendering old libraries
+unusable. This should not happen in Common Lisp, although we could be forced to be more
+deliberate and slower when introducing new features.
+Importantly, to prevent future backward-incompatibility, we should be mindful about leaving space for
+the potential extension of the added feature.
+
+# Conclusion
+
+I have been thinking what would solve the stagnation problem in CL for several
+years. And I heard the news about p-l-n finally became available in major implementations.
+That hit me, and I got a potential solution.
+I have several core ideas for improving and extending the Common Lisp and this
+will be is the first article in the series of posts I am currently planning to publish.
+
+Tl;dr:
+
++ Providing an extension in one implementation and spreading the extention should be the standard way to push Lisp forward.
++ However, it causes stagnation because major implementations focus on the stability.
++ What we need is a working implementation that is free from the burden of stability, easy to understand and extend, complete,
+  and accept radical changes beyond the standard.
++ I have several core ideas that improves Lisp, so stay tuned.
