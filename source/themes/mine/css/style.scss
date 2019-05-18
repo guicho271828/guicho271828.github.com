@@ -31,6 +31,8 @@ $text-font: 'Montserrat';
 body {
     background-color: $background1;
     font-family: $text-font, sans-serif;   // , Helvetica, Arial,'Lucida Grande', Meiryo, メイリオ, sans-serif
+    line-height: 130%;
+    
     // font-size: 16px;
     margin: 0;
 
@@ -142,5 +144,8 @@ tt {
     font-family: (unquote mono-font);
 }
 
-@import "_3bmd";
+blockquote {
+    font-style:italic;
+}
 
+@import "_3bmd";

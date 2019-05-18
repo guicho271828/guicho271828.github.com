@@ -25,6 +25,7 @@
 body {
   background-color: #2e3434;
   font-family: "Montserrat", sans-serif;
+  line-height: 130%;
   margin: 0; }
   body nav.navigation {
     font-family: "Comfortaa", sans-serif;
@@ -103,6 +104,9 @@ pre {
 tt {
   font-size: .9em;
   font-family: unquote mono-font; }
+
+blockquote {
+  font-style: italic; }
 
 /* Stolen from lisppaste for the colorize output of 3bmd */
 .paste {
