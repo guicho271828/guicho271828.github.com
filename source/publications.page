@@ -8,6 +8,8 @@ URL: publications/index.html
 
 # Peer-Reviewed Papers (In Chronological Order)
 
+1. Asai, M; Muise, C: 2020. Learning Neural-Symbolic Descriptive Planning Models via Cube-Space Priors: The Voyage Home (to STRIPS)
+   In *IJCAI-2020* . [on Arxiv.](https://arxiv.org/abs/2004.12850)
 1. Asai, M: 2019. Unsupervised Grounding of Plannable First-Order Logic Representation from Images.
    In *ICAPS-2019* . [on Arxiv.](https://arxiv.org/abs/1902.08093)
 1. Asai, M.; Kajino, H: 2019. Towards Stable Symbol Grounding with Zero-Suppressed State AutoEncoder.
