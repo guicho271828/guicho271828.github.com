@@ -103,5 +103,8 @@ Recent work also focuses on LLM-based reasoning, inference-time scaling, and alg
 
 * Misc.
 
-My Erdos number is 5.
- My Erdos number is 4 (P. Erdos -> D.J. Kleitman -> T.C. Hu -> A.B. Kahng -> A. Fukunaga)
+My Erdos number is 5 (probably).
+
+#+begin_src
+P. Erdos -> D.J. Kleitman -> T.C. Hu -> A.B. Kahng -> A. Fukunaga -> M. Asai
+#+end_src
