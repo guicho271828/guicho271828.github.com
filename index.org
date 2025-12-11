@@ -34,6 +34,9 @@ He finished his PhD at University of Tokyo, advised by [[https://metahack.org/][
     We instead control traditional path planners (RRT, RRT*, A*) with LLM-generated geometric constraints.
 + 2024/10/24 Received an [[https://www.ecai2024.eu/awards/outstanding-paper-awards][Outstanding Paper Award]] at ECAI 2024 for
   [[https://arxiv.org/abs/2305.09840][Scale-Adaptive Balancing of Exploration and Exploitation in Classical Planning]], Stephen Wissow and Masataro Asai.
++ 2024/07 Carlos Nunez Molina has presetned our joint work at IJCAI 2024.
+  + [[https://dl.acm.org/doi/abs/10.24963/ijcai.2024/747][On using admissible bounds for learning forward search heuristics]],
+    Carlos Núñez-Molina, Masataro Asai, Pablo Mesejo, Joan Fernández-Olivares.
 
 * Research Interest
 
