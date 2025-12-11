@@ -2,13 +2,27 @@
 #+TITLE: Masataro Asai
 #+AUTHOR: Masataro Asai
 
-
-* Contacts
-
+#+begin_container-fluid
+#+begin_row-fluid
+#+begin_span3
+#+html: <img src="img/static/praha.jpg" alt="Profile picture" style=" width:150px; height:150px; border-radius:50%; object-fit:cover; ">
+#+end_span3
+#+begin_span9
 + Email : guicho2.71828-at-gmail.com, masataro.asai@ibm.com
 + Links:
   + [[https://scholar.google.com/citations?user=b4UzH5AAAAAJ][Google scholar]]
   + [[https://dblp.uni-trier.de/pid/149/1319.html][dblp]]
+
+I am a *Staff Research Scientist* at [[https://mitibmwatsonailab.mit.edu][MIT-IBM Watson AI Lab]] in Cambridge, US.
+I specialize in /planning/, /heuristic search/, /heuristic graph search/,
+/machine learning/, /deep learning/, /Bayesian generative modeling/.
+and a variety of topics covering *Neuro-symbolic approaches*.
+#+end_span9
+#+end_row-fluid
+#+end_container-fluid
+
+* Contacts
+
 
 * News
 
