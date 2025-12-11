@@ -14,7 +14,7 @@ Masataro Asai is a *Staff Research Scientist* at [[https://mitibmwatsonailab.mit
 He specializes in /classical planning/, /heuristic graph search/,
 /deep learning/, /Bayesian generative modeling/,
 and a variety of topics covering *neuro-symbolic approaches*.
-He finished his PhD at University of Tokyo, advised by [[https://metahack.org/][Alex Fukunaga]].
+He finished his PhD at University of Tokyo in 2018, advised by [[https://metahack.org/][Alex Fukunaga]].
 
 [[file:cv.pdf][CV]], [[file:statement-research.pdf][Research Statement]]
 #+end_span9
