@@ -1,9 +1,9 @@
 
 .PHONY: all clean
 
-all: default.css layout.css projector.css
+all: style.css
 
-%.css : %.scss
+%.css : %.scss $(wildcard _*.scss)
 	sassc $< $@
 
 clean:

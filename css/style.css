@@ -1,7 +1,59 @@
+@charset "UTF-8";
 /* ************ Contents and Control ********** */
 /* minibuffer */
 .mjx-chtml {
   margin-right: 0.3em !important; }
+
+/* lighten($text,4); */
+a {
+  color: #234; }
+  a:hover {
+    color: #293d52; }
+  a:visited {
+    color: #203041; }
+  a:visited:hover {
+    color: #1f2e3d; }
+
+i {
+  font-style: 'Italic'; }
+
+body {
+  color: #1C2024;
+  font-family: 'Noto Serif', Arial, 'Lucida Grande', Meiryo, メイリオ, sans-serif;
+  font-style: medium;
+  background-color: #fff; }
+
+pre, code {
+  font-family: 'Ubuntu Mono',monospace;
+  background-color: white; }
+
+code {
+  border: 1px dashed #222222;
+  border-radius: 2px; }
+
+h1, h2, h3, h4, b {
+  text-shadow: 1px 1px 1px lightgray; }
+
+.note {
+  animation-name: emerge;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  font-style: italic;
+  color: #555; }
+
+img {
+  padding: 2px;
+  border-width: 0px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: #222; }
+
+.figure img {
+  /* background-color: #777; */ }
+
+blockquote {
+  /* font-style: italic; */ }
 
 /* ************** Sectioning ************** */
 .outline-1, .outline-2, .outline-3, .outline-4 {
