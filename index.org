@@ -8,7 +8,7 @@
 #+html: <img src="img/static/praha.jpg" alt="Profile picture" style=" width:150px; height:150px; border-radius:50%; object-fit:cover; ">
 #+end_span3
 #+begin_span9
-Email : guicho2.71828-at-gmail.com, masataro.asai@ibm.com , [[https://scholar.google.com/citations?user=b4UzH5AAAAAJ][Google scholar]] [[https://dblp.uni-trier.de/pid/149/1319.html][dblp]]
+guicho2.71828-at-gmail.com | [[https://scholar.google.com/citations?user=b4UzH5AAAAAJ][Google scholar]] | [[https://dblp.uni-trier.de/pid/149/1319.html][dblp]] | [[https://www.linkedin.com/in/masataro-asai/][LinkedIn]] | [[https://github.com/guicho271828][Github]] | [[https://x.com/guicho271828][Twitter]]
 
 Masataro Asai is a *Staff Research Scientist* at [[https://mitibmwatsonailab.mit.edu][MIT-IBM Watson AI Lab]] in Cambridge, US.
 He specialize in /classical planning/, /heuristic graph search/,
@@ -39,6 +39,9 @@ He finished his PhD at University of Tokyo, advised by [[https://metahack.org/][
 + 2024/07 Carlos Nunez Molina has presetned our joint work at IJCAI 2024.
   + [[https://dl.acm.org/doi/abs/10.24963/ijcai.2024/747][On using admissible bounds for learning forward search heuristics]],
     Carlos Núñez-Molina, Masataro Asai, Pablo Mesejo, Joan Fernández-Olivares.
+  + We answer how we should learn heuristic functions when some bounds are known. Keywords are:
+    + [[https://en.wikipedia.org/wiki/Truncated_normal_distribution][Truncated Gaussian distribution]]
+    + [[https://en.wikipedia.org/wiki/Principle_of_maximum_entropy][Maximum Entropy Principle]]
 #+end_smaller
 
 * Research Interest
@@ -100,4 +103,5 @@ Recent work also focuses on LLM-based reasoning, inference-time scaling, and alg
 
 * Misc.
 
-My Erdos number is
+My Erdos number is 5.
+ My Erdos number is 4 (P. Erdos -> D.J. Kleitman -> T.C. Hu -> A.B. Kahng -> A. Fukunaga)
