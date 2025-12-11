@@ -170,6 +170,11 @@ blockquote {
 mjx-container {
   padding-right: 0.2em !important; }
 
+/* ***************** List ******************* */
+li {
+  margin: 0.3em;
+  /* list-style-type: disc; */ }
+
 /* ************* Positioning ************ */
 th.right, td.right {
   float: none; }
