@@ -8,25 +8,20 @@
 #+html: <img src="img/static/praha.jpg" alt="Profile picture" style=" width:150px; height:150px; border-radius:50%; object-fit:cover; ">
 #+end_span3
 #+begin_span9
-+ Email : guicho2.71828-at-gmail.com, masataro.asai@ibm.com
-+ Links:
-  + [[https://scholar.google.com/citations?user=b4UzH5AAAAAJ][Google scholar]]
-  + [[https://dblp.uni-trier.de/pid/149/1319.html][dblp]]
+Email : guicho2.71828-at-gmail.com, masataro.asai@ibm.com , [[https://scholar.google.com/citations?user=b4UzH5AAAAAJ][Google scholar]] [[https://dblp.uni-trier.de/pid/149/1319.html][dblp]]
 
-I am a *Staff Research Scientist* at [[https://mitibmwatsonailab.mit.edu][MIT-IBM Watson AI Lab]] in Cambridge, US.
-I specialize in /planning/, /heuristic search/, /heuristic graph search/,
-/machine learning/, /deep learning/, /Bayesian generative modeling/.
+Masataro Asai is a *Staff Research Scientist* at [[https://mitibmwatsonailab.mit.edu][MIT-IBM Watson AI Lab]] in Cambridge, US.
+He specialize in /classical planning/, /heuristic graph search/,
+/deep learning/, /Bayesian generative modeling/,
 and a variety of topics covering *Neuro-symbolic approaches*.
+He finished his PhD at University of Tokyo, advised by [[https://metahack.org/][Alex Fukunaga]].
 #+end_span9
 #+end_row-fluid
 #+end_container-fluid
 
-* Contacts
-
-
 * News
 
-+ 2025/12/11 Revamped the website for a more ... professional-looking style
++ 2025/12/11 Revamped the website for a more professional look
 + 2025/12/01 [[https://arxiv.org/abs/2509.08150][Verbalized Algorithms]] presented at [[https://efficient-reasoning.github.io/][Neurips 2025 Efficient Reasoning workshop]].
   + Classical algorithms are immensely useful for modulating LLM's reasoning behavior. Why reinvent the wheel?
 + 2025/11/07 Two papers accepted in AAAI-26:
@@ -37,6 +32,8 @@ and a variety of topics covering *Neuro-symbolic approaches*.
 + 2025/06/04 Published [[https://arxiv.org/abs/2506.04500]["Don't Do That!": Guiding Embodied Systems through Large Language Model-based Constraint Generation]] on Arxiv.
   + LLM-based path generation is terrible.
     We instead control traditional path planners (RRT, RRT*, A*) with LLM-generated geometric constraints.
++ 2024/10/24 Received an [[https://www.ecai2024.eu/awards/outstanding-paper-awards][Outstanding Paper Award]] at ECAI 2024 for
+  [[https://arxiv.org/abs/2305.09840][Scale-Adaptive Balancing of Exploration and Exploitation in Classical Planning]], Stephen Wissow and Masataro Asai.
 
 * Research Interest
 
@@ -50,10 +47,20 @@ This includes:
 
 Recent work also focuses on LLM-based reasoning, inference-time scaling, and algorithmic guarantees while using LLMs.
 
-#+CAPTION: (Left) Result of solving 8-puzzle with learned discrete latents. (Right) Cognitive system modules: perception, heuristics, search.
-[[png:img/mnist-plan]]
+#+begin_container-fluid
+#+begin_row-fluid
+#+begin_span6
+#+CAPTION: Result of solving 8-puzzle with learned discrete latents.
+[[png:mnist-plan]]
+#+end_span6
+#+begin_span6
+#+CAPTION: Cognitive system modules: perception, heuristics, search.
+[[png:plan]]
+#+end_span6
+#+end_row-fluid
+#+end_container-fluid
 
-[[png:img/plan]]
+
 
 
 
@@ -84,3 +91,7 @@ Recent work also focuses on LLM-based reasoning, inference-time scaling, and alg
 - 2024 :: Carlos Núñez-Molina*, Universidad de Granada (Ph.D, Summa Cum Laude)
 - 2025 :: Amin Seffo, Technical University of München (M.Sc)
 - 2026 :: Supriya Lall, MIT EECS (M.Eng)
+
+* Misc.
+
+My Erdos number is
