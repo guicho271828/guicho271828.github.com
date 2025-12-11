@@ -10,11 +10,13 @@
 #+begin_span9
 guicho2.71828-at-gmail.com | [[https://scholar.google.com/citations?user=b4UzH5AAAAAJ][Google scholar]] | [[https://dblp.uni-trier.de/pid/149/1319.html][dblp]] | [[https://www.linkedin.com/in/masataro-asai/][LinkedIn]] | [[https://github.com/guicho271828][Github]] | [[https://x.com/guicho271828][Twitter]]
 
-Masataro Asai is a *Staff Research Scientist* at [[https://mitibmwatsonailab.mit.edu][MIT-IBM Watson AI Lab]] in Cambridge, US.
-He specialize in /classical planning/, /heuristic graph search/,
+Masataro Asai is a *Staff Research Scientist* at [[https://mitibmwatsonailab.mit.edu][MIT-IBM Watson AI Lab]] in Cambridge, MA, US.
+He specializes in /classical planning/, /heuristic graph search/,
 /deep learning/, /Bayesian generative modeling/,
-and a variety of topics covering *Neuro-symbolic approaches*.
+and a variety of topics covering *neuro-symbolic approaches*.
 He finished his PhD at University of Tokyo, advised by [[https://metahack.org/][Alex Fukunaga]].
+
+[[file:cv.pdf][CV]], [[file:statement-research.pdf][Research Statement]]
 #+end_span9
 #+end_row-fluid
 #+end_container-fluid

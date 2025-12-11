@@ -19,7 +19,6 @@
 *TAGS
 *.map
 /_deploy/
-*.pdf
 *.fdb_latexmk
 *.fls
 .sass-cache/
