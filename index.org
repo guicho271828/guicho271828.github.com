@@ -1,0 +1,71 @@
+#+include: "head.org"
+#+TITLE: Masataro Asai
+#+AUTHOR: Masataro Asai
+
+
+* Contacts
+
++ Email : guicho2.71828-at-gmail.com, masataro.asai@ibm.com
++ Links:
+  + [[https://scholar.google.com/citations?user=b4UzH5AAAAAJ][Google scholar]]
+  + [[https://dblp.uni-trier.de/pid/149/1319.html][dblp]]
+
+* News
+
++ 2025/12/01 [[https://arxiv.org/abs/2509.08150][Verbalized Algorithms]] presented at [[https://efficient-reasoning.github.io/][Neurips 2025 Efficient Reasoning workshop]].
+  + Classical algorithms are immensely useful for modulating LLM's reasoning behavior. Why reinvent the wheel?
++ 2025/11/07 Two papers accepted in AAAI-26:
+  + [[https://arxiv.org/abs/2508.08385][Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning]]. Masataro Asai.
+    + State of the art in Agile planning with MCTS!
+  + [[https://arxiv.org/abs/2405.18248v2][Extreme Value Monte Carlo Tree Search for Classical Planning]]. Masataro Asai, [[https://www.cs.unh.edu/~sjw1000/][Stephen Wissow]].
+    + We answer how we should understand the bellman backup (backing up min/max) from the statistical point of view.
++ 2025/06/04 Published [[https://arxiv.org/abs/2506.04500]["Don't Do That!": Guiding Embodied Systems through Large Language Model-based Constraint Generation]] on Arxiv.
+  + LLM-based path generation is terrible.
+    We instead control traditional path planners (RRT, RRT*, A*) with LLM-generated geometric constraints.
+
+* Research Interest
+
+*Neuro-Symbolic Systems (Machine Learning + Classical AI) for search/planning/reasoning*,
+with an emphasis on Bayesian generative modeling (e.g., variational inference).
+This includes:
+
+1. *Automatic identification of discrete structured representation for planning* (symbol grounding and knowledge acquisition).
+2. *Learning a search policy / heuristics* for faster problem solving.
+3. *Statistically well-motivated search algorithms* inspired by multi-armed bandits.
+
+Recent work also focuses on LLM-based reasoning, inference-time scaling, and algorithmic guarantees while using LLMs.
+
+#+CAPTION: (Left) Result of solving 8-puzzle with learned discrete latents. (Right) Cognitive system modules: perception, heuristics, search.
+[[png:img/mnist-plan]]
+
+[[png:img/plan]]
+
+
+
+* Work Experience
+
+- 07/2019--present :: Staff Research Scientist (PI) at *MIT-IBM Watson AI Lab, IBM Research Cambridge* (Full Time).
+- 04/2018--07/2019 :: Research Staff Member (PI), Embodied Learning Group, *IBM Research Tokyo* (Full Time).
+- 08/2016--11/2016 :: Research Intern, *IBM Research Ireland*.
+- 04/01/2016--03/31/2018 :: Research Fellow (DC2), Japan Society for the Promotion of Science.
+
+* Awards
+
+- 10/2024 :: Outstanding Paper Award, 27th European Conference on Artificial Intelligence.
+- 06/2022 :: ICAPS 2022 Outstanding PC and SPC Award (Outstanding Program Committee Members).
+- 03/2017 :: JSAI Annual Conference Student Award, The Japanese Society for Artificial Intelligence.
+
+* Grants
+
+- 09/2022--09/2024 ::
+  [[https://www.gtri.gatech.edu/about/working-with-gtri/contract-vehicles/iac-mac][DTIC contract FA8075-18-D-0008, Task Order FA807520F0060, Task 4 - Autonomous Defensive Cyber Operations (DCO) Research & Development (R&D).]]
+
+- 04/2016--03/2018 ::
+  JSPS Grant-in-Aid for JSPS Fellows and JSPS KAKENHI grant,
+  [[https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-16J10073/][Project No. 16J10073]].
+
+* Thesis Supervision
+
+- 2024 :: Carlos Núñez-Molina*, Universidad de Granada (Ph.D, Summa Cum Laude)
+- 2025 :: Amin Seffo, Technical University of München (M.Sc)
+- 2026 :: Supriya Lall, MIT EECS (M.Eng)
