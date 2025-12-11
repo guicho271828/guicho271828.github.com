@@ -19,7 +19,6 @@
 *TAGS
 *.map
 /_deploy/
-*.html
 *.pdf
 *.fdb_latexmk
 *.fls
