@@ -31,7 +31,7 @@ code {
   border: 1px dashed #222222;
   border-radius: 2px; }
 
-h1, h2, h3, h4, b {
+h1, h2, h3, h4 {
   text-shadow: 1px 1px 1px lightgray; }
 
 .note {

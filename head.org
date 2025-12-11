@@ -2,8 +2,8 @@
 #+OPTIONS:   skip:nil d:nil todo:nil pri:nil tags:not-in-toc date:t
 #+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/layout.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/default.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
+
 # #+HTML_HEAD: <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
 # #+HTML_HEAD: <script type="text/javascript" src="js/jquery.loupe.min.js"></script>
 # #+HTML_HEAD: <script type="text/javascript" src="js/jgestures/jgestures.min.js"></script>
@@ -23,7 +23,7 @@
 #+LINK: sgif file:img/static/%s.gif
 #+LINK: ssvg file:img/static/%s.svg
 
-#+html_head: <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500,900">
+#+html_head: <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:500,900">
 #+html_head_extra:
 
 # ## To remove the banner, comment out the next line.
