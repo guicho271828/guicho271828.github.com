@@ -1,0 +1,70 @@
+/* ************** Sectioning ************** */
+
+#text-before-first-headline {
+    display: none;
+}
+
+.outline-1, .outline-2, .outline-3, .outline-4 {
+    page: mypage;
+}
+
+h1, h2, h3, h4 {
+    font-size: 130%;
+    line-height: 1.25em;
+    text-align: left;
+    left: 6em;
+    margin-bottom: 1em;
+}
+
+h1 {
+    /* max-width: 90%; */
+    &.title {
+        font-size: 200%;
+    }
+}
+
+h2, h3, h4 {
+    max-width: 80%;
+    /* adjusting newlines */
+    padding-left: 2em;
+    text-indent: -2em;
+    margin-left: 2em;
+}
+
+
+
+@mixin secnum() {
+    display: inline-block;
+    font-size: 80%;
+}
+
+.section-number-2, {
+    @include secnum();
+    &:after{
+        // content: '.';
+    }
+}
+
+.section-number-3, {
+    @include secnum();
+    &:after{
+        // content: '.';
+    }
+}
+
+.section-number-4, {
+    @include secnum();
+    &:after{
+        // content: '.';
+    }
+}
+
+/* .section-number-4 { */
+/*     display: inline; */
+/*     font-size: 60%; */
+/* } */
+
+.outline-text-2, .outline-text-3, .outline-text-4 {
+    padding: 0px 5% 0px 5%;
+    margin: 0px;
+}

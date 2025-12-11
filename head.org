@@ -2,12 +2,12 @@
 #+OPTIONS:   skip:nil d:nil todo:nil pri:nil tags:not-in-toc date:t
 #+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/layout.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/default.css" />
-#+HTML_HEAD: <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="js/jquery.loupe.min.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="js/jgestures/jgestures.min.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="js/code.js"></script>
+# #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/layout.css" />
+# #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/default.css" />
+# #+HTML_HEAD: <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
+# #+HTML_HEAD: <script type="text/javascript" src="js/jquery.loupe.min.js"></script>
+# #+HTML_HEAD: <script type="text/javascript" src="js/jgestures/jgestures.min.js"></script>
+# #+HTML_HEAD: <script type="text/javascript" src="js/code.js"></script>
 
 #+HTML_HEAD: <script type="text/javascript" src="js/mathjaxconf.js" defer></script>
 #+HTML_HEAD: <script type="text/javascript" src="MathJax/es5/tex-chtml.js" defer></script>

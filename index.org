@@ -12,6 +12,7 @@
 
 * News
 
++ 2025/12/11 Revamped the website for a more ... professional-looking style
 + 2025/12/01 [[https://arxiv.org/abs/2509.08150][Verbalized Algorithms]] presented at [[https://efficient-reasoning.github.io/][Neurips 2025 Efficient Reasoning workshop]].
   + Classical algorithms are immensely useful for modulating LLM's reasoning behavior. Why reinvent the wheel?
 + 2025/11/07 Two papers accepted in AAAI-26:
