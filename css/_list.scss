@@ -4,86 +4,14 @@ ul {
     padding-left: 20px;
 }
 
-/* invisible by default */
 
 li {
     margin: 0.45em;
     list-style-type: none;  /* do not use the default list style at all*/
     /* list-style-type: disc; */
-    visibility: hidden;
-}
-
-dd {
-    visibility: hidden;
 }
 
 dt {
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
-
-dd, li {
-    dd, li {
-        &:before {
-            content : '';
-        }
-    }
-}
-
-/* ***************** List expansion ******************* */
-
-/* expanded lists and dl (description list) is visible */
-
-/* display: the size is not accounted */
-/* visibility: the contents are invisible, but the size is accounted */
-
-dd, li {
-    &.expanded {
-        visibility : visible;
-    }
-}
-
-/* > dd, > ul, > ol { */
-/*     &:first-of-type { */
-/*         > dl, > li { */
-/*             &:not(.expanded) { */
-/*                 &:before { */
-/*                     /\* visibility : visible; *\/ */
-/*                     content : '...'; */
-/*                 } */
-/*                 ~ :not(.expanded) { */
-/*                     content : ''; */
-/*                 } */
-/*             /\* dd, li { *\/ */
-/*             /\*     &:before { *\/ */
-/*             /\*         content : ''; *\/ */
-/*             /\*     } *\/ */
-/*             /\* } *\/ */
-/*             } */
-/*         } */
-/*     } */
-/* } */
-
-
-/* **************** misc markup **************** */
-
-.good li {
-    list-style:none;
-    &:before {
-        content:"☺";
-        margin-right: 0.3em;
-    }
-}
-
-.bad li {
-    list-style:none;
-    &:before {
-        content:"☹";
-        margin-right: 0.3em;
-    }
-}
-
-.check li {
-    list-style:check;
-}
-
