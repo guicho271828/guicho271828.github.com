@@ -21,9 +21,11 @@ He finished his PhD at University of Tokyo, advised by [[https://metahack.org/][
 
 * News
 
+#+begin_smaller
 + 2025/12/11 Revamped the website for a more professional look
 + 2025/12/01 [[https://arxiv.org/abs/2509.08150][Verbalized Algorithms]] presented at [[https://efficient-reasoning.github.io/][Neurips 2025 Efficient Reasoning workshop]].
   + Classical algorithms are immensely useful for modulating LLM's reasoning behavior. Why reinvent the wheel?
+  + [[https://www.linkedin.com/posts/masataro-asai_neurips2025-activity-7401688240434618368-OqDd?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAf64VQBTR_tpriIaOcQIhPa67SYTORm1Do][See my LinkedIn post on this.]]
 + 2025/11/07 Two papers accepted in AAAI-26:
   + [[https://arxiv.org/abs/2508.08385][Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning]]. Masataro Asai.
     + State of the art in Agile planning with MCTS!
@@ -37,6 +39,7 @@ He finished his PhD at University of Tokyo, advised by [[https://metahack.org/][
 + 2024/07 Carlos Nunez Molina has presetned our joint work at IJCAI 2024.
   + [[https://dl.acm.org/doi/abs/10.24963/ijcai.2024/747][On using admissible bounds for learning forward search heuristics]],
     Carlos Núñez-Molina, Masataro Asai, Pablo Mesejo, Joan Fernández-Olivares.
+#+end_smaller
 
 * Research Interest
 
