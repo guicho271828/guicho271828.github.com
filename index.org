@@ -99,7 +99,7 @@ Recent work also focuses on LLM-based reasoning, inference-time scaling, and alg
 
 * Thesis Supervision
 
-- 2024 :: Carlos Núñez-Molina*, Universidad de Granada (Ph.D, Summa Cum Laude)
+- 2024 :: Carlos Núñez-Molina, Universidad de Granada (Ph.D, Summa Cum Laude)
 - 2025 :: Amin Seffo, Technical University of München (M.Sc)
 - 2026 :: Supriya Lall, MIT EECS (M.Eng)
 
