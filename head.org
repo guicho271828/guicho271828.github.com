@@ -3,6 +3,8 @@
 #+OPTIONS: html-postamble:nil
 #+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
 
+#+HTML_HEAD: <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 # #+HTML_HEAD: <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
