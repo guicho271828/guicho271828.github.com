@@ -3,7 +3,7 @@
 #+OPTIONS: html-postamble:nil
 #+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
 
-#+HTML_HEAD: <link rel="icon" href="favicon.svg" type="image/svg+xml">
+#+HTML_HEAD: <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
 
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css" />
 

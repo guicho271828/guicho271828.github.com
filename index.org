@@ -16,7 +16,7 @@ He specializes in /classical planning/, /heuristic graph search/,
 and a variety of topics covering *neuro-symbolic approaches*.
 He finished his PhD at University of Tokyo in 2018, advised by [[https://metahack.org/][Alex Fukunaga]].
 
-[[file:cv.pdf][CV]], [[file:statement-research.pdf][Research Statement]]
+[[file:static/cv.pdf][CV]], [[file:static/statement-research.pdf][Research Statement]]
 #+end_span9
 #+end_row-fluid
 #+end_container-fluid
